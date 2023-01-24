@@ -7,11 +7,15 @@ const FooterBar = () => {
       <div>Take a Beer</div>
       <div className="FooterContainer">
         <div className="FooterBox">
-          <div>Developers</div>
+          <div style={{ marginBottom: "10px", fontSize: "20px" }}>
+            Developers
+          </div>
           <div>Team.Learnus</div>
         </div>
         <div className="FooterBox">
-          <div>Contact Us</div>
+          <div style={{ marginBottom: "10px", fontSize: "20px" }}>
+            Contact Us
+          </div>
           <div>Team.Learnus</div>
         </div>
       </div>

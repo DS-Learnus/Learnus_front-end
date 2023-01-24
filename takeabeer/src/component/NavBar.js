@@ -9,7 +9,7 @@ const NavBar = () => {
   // 유저 상태 관리, 로그인-로그아웃 여부
 
   return (
-    <div style={{ fontSize: "20px" }}>
+    <div style={{ fontSize: "20px", fontFamily: "NanumSquareNeoRegular" }}>
       <Navbar
         style={{
           backgroundColor: "#b9a690",
@@ -42,6 +42,7 @@ const NavBar = () => {
                   backgroundColor: "#6f6457",
                   padding: "7px",
                   marginRight: "5px",
+                  border: "1px solid #b9a690",
                 }}
               >
                 <FontAwesomeIcon icon={faSearch} />
