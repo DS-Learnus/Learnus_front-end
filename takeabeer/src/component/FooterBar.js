@@ -1,0 +1,22 @@
+import React from "react";
+import "../css/FooterBar.css";
+
+const FooterBar = () => {
+  return (
+    <div className="FooterBackground">
+      <div>Take a Beer</div>
+      <div className="FooterContainer">
+        <div className="FooterBox">
+          <div>Developers</div>
+          <div>Team.Learnus</div>
+        </div>
+        <div className="FooterBox">
+          <div>Contact Us</div>
+          <div>Team.Learnus</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FooterBar;
