@@ -71,3 +71,11 @@
   font-size: 24px;
   padding: 20px;
 }
+
+.gotoPage {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+  opacity: 100%;
+  font-size: 21px;
+}

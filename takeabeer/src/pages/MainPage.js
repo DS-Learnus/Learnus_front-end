@@ -1,5 +1,6 @@
 import react from "react";
 import "../css/main-page.css";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -30,6 +31,11 @@ const MainPage = () => {
                 한국에서 유통하는 여러 가지 <br />
                 맥주에 대한 정보를 확인할 수 <br />
                 있습니다.
+                <br />
+                <br />
+                <Link className="gotoPage" to={`/beer/list`}>
+                  &gt; BeerList 바로 가기
+                </Link>
               </div>
             </div>
           </div>
@@ -44,6 +50,11 @@ const MainPage = () => {
                 맥주를 사용한 레시피를 다른 <br />
                 사용자들과 나눔으로써 맥주를 <br />
                 다양하게 즐길 수 있습니다.
+                <br />
+                <br />
+                <Link className="gotoPage" to={`/recipe/list`}>
+                  &gt; Recipe List 바로 가기
+                </Link>
               </div>
             </div>
           </div>
@@ -58,6 +69,11 @@ const MainPage = () => {
                 사용자의 주량에 맞는 맥주와 <br />
                 해당 맥주를 사용한 <br />
                 주류 레시피를 추천해줍니다.
+                <br />
+                <br />
+                <Link className="gotoPage" to={`/recipe/list`}>
+                  &gt; 주량에 맞는 맥주 추천받기
+                </Link>
               </div>
             </div>
           </div>
