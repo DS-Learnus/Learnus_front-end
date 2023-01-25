@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "NanumSquare Neo";
+    src: url("../fonts/NanumSquareNeo.ttf");
+  }
+
+/* 배경 */
+.BeerDetail {
+    position: relative;
+    width: 100%;
+    height: 2434px;  
+    background: #F1EBC6;
+}
+
+.BeerDetail-nav{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+
+    background: #B9A690;
+}
+
+/* 맥주 정보 */
+
+.BeerDetail > p {
+    /* 제품명 */
+    position: absolute;
+    width: 392px;
+    height: 139px;
+    left: 628px;
+    bottom: 2076px;
+
+    font-family: 'NanumSquare Neo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 130%;
+
+    white-space: nowrap;
+    letter-spacing: -0.011em;
+
+    color: #1E1E1E;
+
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.BeerDetail-Info {
+    position: absolute;
+    width: 100%;
+    height: 329px;
+    bottom: 1734px;
+    background: #FFFEF3;
+}
+
+.BeerDetail-lines{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    width: 793px;
+    height: 195px;
+    left: 537px;
+    top: 35px;
+}
+
+.BeerDetail-line{
+    width: 782px;
+    height: 0px;
+    margin: 25px;
+    border: 2px solid #998A77;
+    position: relative;
+}
+
+.BeerDetail-line p:nth-child(1){
+    /* 정보 글씨 */
+    width: 80px;
+    height: 24px;
+
+    font-family: 'NanumSquare Neo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    white-space: nowrap;
+
+    position: absolute;
+    bottom: -11px;
+    letter-spacing: -0.011em;
+
+    color: #4D3A3A;
+}
+
+.BeerDetail-line p:nth-child(2){
+    /* 실제 정보*/
+    position: absolute;
+    left:755px;
+    bottom: -13px;
+
+    font-family: 'NanumSquare Neo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+
+    letter-spacing: -0.011em;
+    white-space: nowrap;
+    
+    color: #A69C9C;
+    text-align: right;
+}
+
+.heart-icon {
+    position: absolute;
+    left: 518px;
+    top:230px;
+
+
+}
+
+/* 이미지 프레임 */
+.BeerDetail-image {
+    position: absolute;
+    width: 280px;
+    height: 538px;
+    left: 155px;
+    bottom: 1748px;
+    
+    background: #D9D9D9;
+    border-radius: 143px;
+}
+
+.BeerDetail-image > img {
+    position: absolute;
+    width: 280px;
+    height: 538px;
+    
+    border-radius: 143px;
+}
+
+
+.BeerDetail-footer{
+    position: absolute;
+    width: 100%;
+    height: 192px;
+    left: 0px;
+    bottom: 0px;
+
+    background: #6F6457;
+}
+
