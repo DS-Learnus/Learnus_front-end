@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "NanumSquareNeoRegular";
+  src: url(./font/NanumSquareNeo-bRg.ttf);
+}
+
+@font-face {
+  font-family: "NanumSquareNeoBold";
+  src: url(./font/NanumSquareNeo-cBd.ttf);
+}
