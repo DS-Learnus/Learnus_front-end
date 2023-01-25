@@ -38,11 +38,11 @@
 }
 
 @font-face {
-  font-family: "NanumSquareNeoRegular";
+  font-family: 'NanumSquareNeoRegular';
   src: url(./fonts/NanumSquareNeo-bRg.ttf);
 }
 
 @font-face {
-  font-family: "NanumSquareNeoBold";
+  font-family: 'NanumSquareNeoBold';
   src: url(./fonts/NanumSquareNeo-cBd.ttf);
 }
