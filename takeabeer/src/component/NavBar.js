@@ -30,8 +30,9 @@ const NavBar = () => {
 
           <Nav className="me-auto">
             &nbsp;&nbsp;&nbsp;
-            <Nav.Link href="#">Let's Beer</Nav.Link>&nbsp;&nbsp;
-            <Nav.Link href="#">beer Recipe</Nav.Link>
+            <Nav.Link href="/">Main</Nav.Link>&nbsp;&nbsp;
+            <Nav.Link href="/beer/list">Let's Beer</Nav.Link>&nbsp;&nbsp;
+            <Nav.Link href="/recipe/list">beer Recipe</Nav.Link>
           </Nav>
 
           <div className="input-group" style={{ maxWidth: "200px" }}>
