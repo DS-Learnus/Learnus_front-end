@@ -1,0 +1,14 @@
+.itemName {
+  width: 12vh;
+  margin-right: 1em;
+}
+
+.itemAmount {
+  width: 8vh;
+  margin-right: 1em;
+}
+
+.ItemInfo {
+  display: flex;
+  padding: 1em;
+}

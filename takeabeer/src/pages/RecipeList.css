@@ -1,0 +1,16 @@
+#recipelistbody {
+  padding: 2vh;
+  margin: 0;
+  background-color: #C5B5A2;
+}
+
+.listTitle {
+  text-align: center;
+}
+.listText {
+  text-align: center;
+}
+#recipeBtn {
+  margin-left: 80%;
+  margin-bottom: 3vh;
+}
