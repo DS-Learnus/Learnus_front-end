@@ -2,7 +2,7 @@ import React from "react";
 import RecipeItem from "../components/RecipeItem";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import PaginationElements from "../components/PaginationElements";
-import "./RecipeList.css";
+import "../css/RecipeList.css";
 
 const RecipeList = () => {
   return (

@@ -22,7 +22,7 @@ const NavBar = () => {
         >
           <a href="/" style={{ marginRight: "auto", marginLeft: "0px" }}>
             <img
-              src={require("../image/takeabeer-logo.png")}
+              src={require("../img/takeabeer-logo.png")}
               width="80px"
               alt="logo"
             />

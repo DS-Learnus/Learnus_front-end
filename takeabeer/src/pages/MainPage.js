@@ -6,7 +6,7 @@ const MainPage = () => {
   return (
     <div style={{ backgroundColor: "#faf7e7" }}>
       <div className="introContainer">
-        <img src={require("../image/takeabeer-logo.png")} />
+        <img src={require("../img/takeabeer-logo.png")} />
         <div className="introTitle">
           T A K E&nbsp;&nbsp; A&nbsp;&nbsp; B E E R
         </div>
@@ -25,7 +25,7 @@ const MainPage = () => {
             <div className="menuBtn" style={{ backgroundColor: "#e2d1bd" }}>
               <img
                 style={{ width: "250px", marginTop: "30px" }}
-                src={require("../image/beer-list.png")}
+                src={require("../img/beer-list.png")}
               ></img>
               <div className="menuBoxContent">
                 한국에서 유통하는 여러 가지 <br />
@@ -44,7 +44,7 @@ const MainPage = () => {
             <div className="menuBtn" style={{ backgroundColor: "#f3ebbf" }}>
               <img
                 style={{ width: "230px", marginTop: "80px" }}
-                src={require("../image/recipe-list.png")}
+                src={require("../img/recipe-list.png")}
               ></img>
               <div className="menuBoxContent">
                 맥주를 사용한 레시피를 다른 <br />
@@ -63,7 +63,7 @@ const MainPage = () => {
             <div className="menuBtn" style={{ backgroundColor: "#d4debd" }}>
               <img
                 style={{ width: "190px", marginTop: "80px" }}
-                src={require("../image/recommend.png")}
+                src={require("../img/recommend.png")}
               ></img>
               <div className="menuBoxContent">
                 사용자의 주량에 맞는 맥주와 <br />
