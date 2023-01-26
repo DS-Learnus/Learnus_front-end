@@ -1,0 +1,281 @@
+.review {
+  position: absolute;
+  width: 850px;
+  height: 1422px;
+  left: 358px;
+  bottom: 252px;
+
+  background: #fffef3;
+  border-radius: 12px;
+}
+
+.reviewP {
+  /* 후기 남기기, 코멘트 */
+  position: absolute;
+  width: 149px;
+  height: 39px;
+  left: 15px;
+  top: 15px;
+
+  font-family: "NanumSquareNeoRegular";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 130%;
+  white-space: nowrap;
+
+  letter-spacing: -0.011em;
+
+  color: #525151;
+}
+
+/* ~~~~~후기 작성칸~~~~~ */
+
+.review-write {
+  position: absolute;
+  width: 800px;
+  height: 373px;
+  left: 25px;
+  top: 13px;
+}
+
+/* 코멘트 작성창 */
+
+.write-rect1 {
+  position: absolute;
+  width: 800px;
+  height: 295px;
+  left: 0px;
+  bottom: 1px;
+
+  background: #b3c38f;
+  border-radius: 10px;
+}
+
+.write-rect2 {
+  position: absolute;
+  width: 750px;
+  height: 206px;
+  left: 24px;
+  bottom: 67px;
+
+  background: #d4debd;
+  border-radius: 10px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.write-btn {
+  position: absolute;
+  width: 107px;
+  height: 33px;
+  right: 25px;
+  bottom: 16px;
+
+  background: #f3ebbf;
+  border-radius: 12px;
+
+  font-family: "NanumSquareNeoRegular";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 130%;
+  white-space: nowrap;
+
+  letter-spacing: -0.011em;
+
+  background-color: #898989;
+}
+
+.star-frame {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 1px;
+
+  position: relative;
+  width: 224px;
+  height: 44px;
+  left: 620px;
+  top: 19px;
+}
+
+/* ~~~~~코멘트 확인창~~~~~ */
+
+.review-read {
+  position: absolute;
+  width: 800px;
+  height: 989px;
+  left: 25px;
+  top: 418px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #d4debd 0%,
+    rgba(212, 222, 189, 0) 100%
+  );
+}
+
+.comment-window {
+  box-sizing: border-box;
+  position: absolute;
+  width: 800px;
+  height: 853px;
+  left: 0px;
+  top: 74px;
+
+  border: 2px solid #94a66d;
+  border-radius: 10px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 15px;
+
+  position: absolute;
+  width: 700px;
+  height: 783px;
+  left: 50px;
+  top: 30px;
+}
+
+.c {
+  width: 700px;
+  height: 118px;
+  position: relative;
+  flex: none;
+  flex-grow: 0;
+  flex-basis: auto;
+  left: 30px;
+  top: 0px;
+  margin: 18px;
+}
+
+.userImg {
+  position: absolute;
+  width: 87px;
+  height: 88px;
+  top: 12px;
+  background: #d9d9d9;
+
+  border-radius: 50%;
+}
+
+.userImg > img {
+  position: absolute;
+  width: 87px;
+  height: 88px;
+
+  border-radius: 50%;
+}
+
+.strBox {
+  position: absolute;
+  width: 586px;
+  height: 71px;
+  left: 100px;
+}
+
+.comment-userName {
+  /* 댓글 작성자명 */
+  position: absolute;
+  width: 57px;
+  height: 26px;
+  left: 0px;
+  top: 15px;
+
+  font-family: "NanumSquareNeoRegular";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 130%;
+  letter-spacing: -0.011em;
+
+  color: #000000;
+}
+
+.strBox p:nth-child(2) {
+  /* 댓글 내용 */
+  position: absolute;
+  width: 118px;
+  height: 26px;
+  left: 0px;
+  top: 60px;
+
+  font-family: "NanumSquareNeoRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+
+  letter-spacing: -0.011em;
+
+  color: #000000;
+}
+
+.userStarBox {
+  position: relative;
+  width: 112px;
+  height: 38px;
+  right: -500px;
+  top: 15px;
+
+  background: #d4debd;
+  border-radius: 150px;
+}
+
+.userStarBox > p {
+  position: absolute;
+  width: 14px;
+  height: 26px;
+  left: 59.5px;
+  top: 5px;
+
+  font-family: "NanumSquareNeoRegular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 130%;
+  /* identical to box height, or 26px */
+
+  letter-spacing: -0.011em;
+
+  color: #7b7b7b;
+}
+
+.starIcon {
+  position: absolute;
+  left: 15.62%;
+  right: 62.05%;
+  top: 15.79%;
+  bottom: 18.42%;
+}
+
+.comLine {
+  position: absolute;
+  width: 700px;
+  height: 0px;
+  bottom: 0px;
+  border: 1.5px solid #b3c38f;
+  transform: rotate(-0.05deg);
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 3px;
+
+  position: relative;
+  width: 169px;
+  height: 40px;
+  left: 350px;
+  bottom: -1365px;
+}

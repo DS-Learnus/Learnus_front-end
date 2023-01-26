@@ -2,12 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import { FaRegHeart, FaHeart } from 'react-icons/fa'
-const BeerItem = () => {
+const BeerItem = ({beerdetail}) => {
   return (
     <div>
 
           <Card style={{ width: '18rem', display: 'flex' }}>
-          <Link to="#beerDetail">
+          <Link to="#beerDetail" state={beerdetail}>
           <Card.Img variant="top" src="https://picsum.photos/250/250" alt="맥주 사진"/>
           </Link>
       <Card.Body>
