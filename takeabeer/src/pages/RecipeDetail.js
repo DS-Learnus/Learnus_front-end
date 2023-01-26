@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/RecipeDetail.css";
 import "../css/Review.css";
-import Review from "./Review";
+import Review from "../components/Review";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as regularThumbs } from "@fortawesome/free-regular-svg-icons"; // ♡

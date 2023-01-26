@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/BeerDetail.css";
 import "../css/Review.css";
-import Review from "./Review";
+import Review from "../components/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons"; // ♡
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons"; // ♥︎

@@ -79,3 +79,11 @@
   opacity: 100%;
   font-size: 21px;
 }
+
+.btnColor{
+  text-decoration: none;
+  color: white;
+  opacity: 100%;
+  font-size: 21px;
+  background-color: black;
+}

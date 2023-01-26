@@ -1,8 +1,18 @@
-import react from "react";
+import React, { useState } from 'react';
 import "../css/main-page.css";
 import { Link } from "react-router-dom";
+import Modal from "../components/Modal";
 
 const MainPage = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+      setModalOpen(true);
+  };
+  const closeModal = () => {
+      setModalOpen(false);
+  };
+
   return (
     <div style={{ backgroundColor: "#faf7e7" }}>
       <div className="introContainer">
@@ -71,12 +81,11 @@ const MainPage = () => {
                 주류 레시피를 추천해줍니다.
                 <br />
                 <br />
-                <Link className="gotoPage" to={`/recipe/list`}>
-                  &gt; 주량에 맞는 맥주 추천받기
-                </Link>
+                <button onClick={openModal}  className="btnColor">&gt; 주량에 맞는 맥주 추천받기</button>
               </div>
             </div>
           </div>
+          <Modal open={modalOpen} close={closeModal} header="오늘의 추천"/>
         </div>
       </div>
     </div>
