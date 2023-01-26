@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
-import { useState } from "react";
 
 
 /**
@@ -18,11 +17,12 @@ const AuthFormBlock = styled.div`
         text-align: center;
         border-radius: 9px;
         border: none;
-        color: white;
+        color: #FFFEF3;
 
         font-size: 28px;    
         line-height: 32px;
-    }    
+    } 
+
     .login-btn {
         background: #EB9B3E;
         margin-top: 3.5rem;
@@ -71,13 +71,7 @@ const StyledInput = styled.input`
     background-color: #FFFEF3;
 `;
 
-const AuthForm = ({ type, form, onChange, onSubmit, onClick }) => {
-
-    const data = [1, 2, 3, 4, 5];
-    const [select, setSelect] = useState('');
-    const handleClick = (e) => {
-        setSelect(e.target.value);
-    }
+const AuthForm = ({ type, form, onChange, onSubmit}) => {
 
     return (
         <AuthFormBlock>
@@ -101,21 +95,11 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick }) => {
                     <div>
                         <h5 id="degreeTitle">원하는 도수</h5>
                         <div>
-                            {data.map((item, index) => {
-                                return (
-                                    <>
-                                        <button
-                                        value={index}
-                                        onClick={() => handleClick(item)}
-                                        className={`${select === item ? 'select' : ''}`}
-                                        >{item}단계</button>
-                                    </>
-                                );
-                            })}
+                            
                         </div>
                     </div>
                 )}
-                <button className="register-btn"><Link to="/register">회원가입</Link></button>
+                <button className="register-btn"><Link to="/register" style={{ textDecoration: "none", color: '#FFFEF3'}}>회원가입</Link></button>
             </footer>
         </AuthFormBlock>
     )

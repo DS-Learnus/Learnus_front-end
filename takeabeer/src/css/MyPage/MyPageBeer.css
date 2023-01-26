@@ -1,0 +1,26 @@
+#MyPageTemplate {
+    background-color: #F1EBC6;
+    padding-bottom: 50px;
+    padding-top: 5.6rem;
+    
+}
+
+.MyPageTitle {
+    text-align: center;
+    padding: 2vh;
+    margin: 0;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.whiteBox{
+    background: #FFFEF3;
+    width: 1176px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
