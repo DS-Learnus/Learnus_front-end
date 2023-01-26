@@ -85,7 +85,7 @@ const MainPage = () => {
               </div>
             </div>
           </div>
-          <Modal open={modalOpen} close={closeModal} header="오늘의 추천"/>
+          <Modal open={modalOpen} close={closeModal}/>
         </div>
       </div>
     </div>

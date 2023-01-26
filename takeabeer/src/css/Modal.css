@@ -26,14 +26,16 @@
   position: relative;
   padding: 16px 64px 16px 16px;
   background-color: #f1f1f1;
+}
+
+header > p {
   font-weight: 700;
   color:#B3C38F;
   font-family: 'NanumSquare Neo';
   font-style: normal;
-  font-weight: 800;
   font-size: 20px;
-  line-height: 150%;
 }
+
 .modal > section > header button {
   position: absolute;
   top: 15px;
@@ -108,6 +110,8 @@
 
   border: 5px solid #B9A690;
   border-radius: 46px;
+
+  margin: 0 auto;
 }
 
 .Rec > img{
@@ -172,4 +176,25 @@
   position: absolute;
   right:30px;
   bottom: 20px;
+}
+
+
+.gotoDetail {
+  text-decoration: none;
+  
+  color: #6F6457;  
+  font-family: 'NanumSquare Neo';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 150%;
+
+  position: absolute;
+  height: 45px;
+  left: 75px;
+  top: 251px;
+  text-align: center;
+  letter-spacing: -0.011em;
+  
+  white-space: nowrap;
 }

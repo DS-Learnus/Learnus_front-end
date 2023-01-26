@@ -64,6 +64,10 @@
   border: none;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 input:focus {
   outline: none;
 }
@@ -204,7 +208,7 @@ input:focus {
 .strBox p:nth-child(2) {
   /* 댓글 내용 */
   position: absolute;
-  width: 118px;
+  width: 500px;
   height: 26px;
   left: 0px;
   top: 60px;
