@@ -13,8 +13,22 @@ import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
-    <BeerDetail beerId={"63cce7b86d2c6bb25cbbe00d"}/>
-  );
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/beerList" element={<BeerList />} />
+          <Route path="/recipeList" element={<RecipeList />} />
+          <Route path="/addRecipe" element={<AddRecipe />} />
+          <Route path="/beerDetail" element={<BeerDetail />} />
+          <Route path="/recipeDetail" element={<RecipeDetail />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/mypage" element={<MyPage />} />
+        </Routes>
+      </Router>
+    </>
+    );
 }
 
 export default App;

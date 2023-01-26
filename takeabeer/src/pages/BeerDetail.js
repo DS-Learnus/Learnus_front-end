@@ -13,7 +13,7 @@ const BeerDetail = ({beerId}) => {
     const [star, setStar] = useState([]);
     const [alcohol, setAlcohol] = useState([]);
     const [ingre, setIngre] = useState([]);
-    const [desc, setDesc] = useState([]);
+    const [intro, setIntro] = useState([]);
 
     useEffect(() => {
         console.log({beerId});
@@ -24,7 +24,7 @@ const BeerDetail = ({beerId}) => {
             setStar(response.data.likes); 
             setAlcohol(response.data.beerDetail.abv); 
             setIngre(response.data.beerDetail.ingredient); 
-            setDesc(response.data.beerDetail.intro); 
+            setIntro(response.data.beerDetail.intro); 
             console.log(response.data); 
           } catch (e) {
             console.log(e);
@@ -58,7 +58,7 @@ const BeerDetail = ({beerId}) => {
                     </div>
                     <div className="BeerDetail-line">
                         <p>특징</p>
-                        <p>{desc}</p>
+                        <p>{intro}</p>
                     </div>
                 </div>
                 <div className="BeerDetail-image">
