@@ -71,16 +71,18 @@ const StyledInput = styled.input`
     background-color: #FFFEF3;
 `;
 
-const AuthForm = ({ type, form, onChange, onSubmit}) => {
+const AuthForm = ({ type, form, onChange, onSubmit, onClick }) => {
 
     const data = [0, 1, 2, 3, 4];
 
     const [select, setSelect] = useState('');
 
-    const onClick = e => {
+    const toggleAction = e => {
         setSelect(() => {
             return e.target.value;
         });
+
+        onClick();
     }
 
     return (
@@ -111,7 +113,8 @@ const AuthForm = ({ type, form, onChange, onSubmit}) => {
                                         <button
                                         value={index}
                                         className={"degreeBtn " + (index == select ? "active" : "")}
-                                        onClick={onClick}
+                                        onClick={toggleAction}
+                                        onChange={onChange}
                                         >
                                             {item + 1}
                                         </button>
