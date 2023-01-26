@@ -8,7 +8,7 @@ const Comment = () => {
   return (
     <div className="c">
       <span className="userImg">
-        <img alt="user" src={require("../img/userImg.jpg")} />
+        <img alt="user" src={require("../img/userImg.png")} />
       </span>
       <div className="strBox">
         <p className="comment-userName">user1</p>

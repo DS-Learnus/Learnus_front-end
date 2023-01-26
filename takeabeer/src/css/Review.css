@@ -76,6 +76,7 @@ input:focus {
   bottom: 16px;
 
   background: #f3ebbf;
+  border-color: #F3EBBF;
   border-radius: 12px;
 
   font-family: "NanumSquareNeoRegular";
@@ -87,7 +88,7 @@ input:focus {
 
   letter-spacing: -0.011em;
 
-  background-color: #898989;
+  background-color: #F3EBBF;
 }
 
 .star-frame {

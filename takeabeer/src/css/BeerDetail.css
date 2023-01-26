@@ -90,7 +90,8 @@
 .BeerDetail-line p:nth-child(2) {
   /* 실제 정보*/
   position: absolute;
-  left: 755px;
+  width: 500px;
+  left: 270px;
   bottom: -13px;
 
   font-family: "NanumSquareNeoRegular";
