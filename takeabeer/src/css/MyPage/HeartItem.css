@@ -1,0 +1,17 @@
+/*맥주 좋아요 누른 아이템 디자인*/
+
+.title {
+    width: 16.7rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 10px;
+    
+}
+
+.heart{
+    width: 16.7rem;
+    text-align: center;
+    padding-bottom: 18px;
+}
+

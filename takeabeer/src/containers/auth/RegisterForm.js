@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AuthForm from "../../components/auth/AuthForm";
 import { changeField, initializeForm } from "../../modules/auth";
+import axios from "axios";
 
 const RegisterForm = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const RegisterForm = () => {
     };
 
     const onClick = e => {
-        const { value, name } = e.target;
+        const { value, name } = e.target.value;
         dispatch(
             changeField({
                 form: 'register',
@@ -30,10 +31,21 @@ const RegisterForm = () => {
         );
     }
 
+    const member = useSelector(state => state.register.form);
+
     // 폼 등록 이벤트 핸들러
-    const onSubmit = e => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        //구현 예정
+
+        const { username, password, passwordConfirm } = form;
+        if(password !== passwordConfirm){
+            //오류 처리
+            return;
+        }
+
+        dispatch(({ username, password }) => {
+            axios.post('', { username, password })
+        })
     };   
 
 

@@ -18,11 +18,12 @@ const AuthFormBlock = styled.div`
         text-align: center;
         border-radius: 9px;
         border: none;
-        color: white;
+        color: #FFFEF3;
 
         font-size: 28px;    
         line-height: 32px;
-    }    
+    } 
+
     .login-btn {
         background: #EB9B3E;
         margin-top: 3.5rem;
@@ -31,34 +32,33 @@ const AuthFormBlock = styled.div`
     .register-btn {
         background: #998A77;
     }
+
     #degreeTitle {
         color: #413E3E;
         font-size: 17px;
         margin-bottom: 18px;
         font-weight: 400;
+    } 
+
+    .Container {
+        display: flex;
+        margin-bottom: 6rem;
     }
+
     .degreeBtn {
-        width: 80px;
-        height: 40px;
-        background-color: #FFFEF3;
-        color: #EB9B3E;
         border: 1px solid #EB9B3E;
-        margin-left: 6px;
-        margin-bottom: 4rem;
-
-        font-weight: 400;
-        font-size: 19px;
-        line-height: 21px;
-
-        &.active {
-            background-color: #EB9B3E;
-            color: white;
-        }
-    }
-    .select {
-        background: light-green;
+        border-radius: 9px;
+        color: #EB9B3E;
+        background-color: #FFFEF3;
+        width: 82px;
+        margin-left: 3px;
+        margin-right: 3px;
     }
 
+    .active {
+        background-color: #EB9B3E;
+        color: #FFFEF3;
+    }
 `;
 
 const StyledInput = styled.input`
@@ -73,10 +73,16 @@ const StyledInput = styled.input`
 
 const AuthForm = ({ type, form, onChange, onSubmit, onClick }) => {
 
-    const data = [1, 2, 3, 4, 5];
+    const data = [0, 1, 2, 3, 4];
+
     const [select, setSelect] = useState('');
-    const handleClick = (e) => {
-        setSelect(e.target.value);
+
+    const toggleAction = e => {
+        setSelect(() => {
+            return e.target.value;
+        });
+
+        onClick();
     }
 
     return (
@@ -100,22 +106,26 @@ const AuthForm = ({ type, form, onChange, onSubmit, onClick }) => {
                 { type === 'register' && (
                     <div>
                         <h5 id="degreeTitle">원하는 도수</h5>
-                        <div>
+                        <div className="Container">
                             {data.map((item, index) => {
-                                return (
-                                    <>
+                                return(
+                                    <div>
                                         <button
                                         value={index}
-                                        onClick={() => handleClick(item)}
-                                        className={`${select === item ? 'select' : ''}`}
-                                        >{item}단계</button>
-                                    </>
-                                );
+                                        className={"degreeBtn " + (index == select ? "active" : "")}
+                                        onClick={toggleAction}
+                                        onChange={onChange}
+                                        >
+                                            {item + 1}
+                                        </button>
+                                    </div>
+                                )
                             })}
                         </div>
                     </div>
                 )}
-                <button className="register-btn"><Link to="/register">회원가입</Link></button>
+
+                <button className="register-btn"><Link to="/register" style={{ textDecoration: "none", color: '#FFFEF3'}}>회원가입</Link></button>
             </footer>
         </AuthFormBlock>
     )

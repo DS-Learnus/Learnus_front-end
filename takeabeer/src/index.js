@@ -15,11 +15,11 @@ const store = createStore(rootReducer, composeWithDevTools());
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <NavBar />
     <Provider store={store}>
-      <NavBar />
       <App />
-      <FooterBar />
     </Provider>
+    <FooterBar />
   </React.StrictMode>,
 );
 
