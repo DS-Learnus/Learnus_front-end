@@ -8,12 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as regularThumbs } from "@fortawesome/free-regular-svg-icons"; // ♡
 import { faThumbsUp as solidThumbs } from "@fortawesome/free-solid-svg-icons"; // ♥︎
 
-const RecipeDetail = ({ recipeId}) => {
+const RecipeDetail = ({ recipeId }) => {
 
   const [name, setName] = useState([]);
   const [userName, setUserName] = useState([]);
   const [created, setCreated] = useState([]);
-  const [ingre, setIngre] = useState([]);
+  const [ingList, setIngList] = useState([]);
   const [content, setContent] = useState([]);
 
   const [thumbs, setThumbs] = useState(false);
@@ -27,7 +27,7 @@ const RecipeDetail = ({ recipeId}) => {
         setName(response.data.recipeDetail.name); 
         setUserName(response.data.recipeDetail.userId.nikname); 
         setCreated(response.data.recipeDetail.createdAt); 
-        setIngre(response.data.recipeDetail.ingredient); 
+        setIngList(response.data.recipeDetail.ingredient); 
         setContent(response.data.recipeDetail.content); 
         console.log(response.data); 
       } catch (e) {
@@ -36,6 +36,8 @@ const RecipeDetail = ({ recipeId}) => {
     };
     fetchData();
   }, []);
+
+  const ingredient = ingList.map((ing, index) => <div className="RecipeDetail-ingredientLine" key={index}><p>{ing.name}</p><p>{ing.amount}{ing.unit}</p></div>);
 
   return (
     <div className="RecipeDetail">
@@ -56,26 +58,7 @@ const RecipeDetail = ({ recipeId}) => {
       <div className="RecipeDetail-ingredient">
         <p>재료</p>
         <div className="RecipeDetail-ingredientContainer">
-          <div className="RecipeDetail-ingredientLine">
-            <p>카스</p>
-            <p>1맥주잔</p>
-          </div>
-          <div className="RecipeDetail-ingredientLine">
-            <p>처음처럼</p>
-            <p>3소주잔</p>
-          </div>
-          <div className="RecipeDetail-ingredientLine">
-            <p>수박</p>
-            <p>1조각</p>
-          </div>
-          <div className="RecipeDetail-ingredientLine">
-            <p>요구르트</p>
-            <p>1개</p>
-          </div>
-          <div className="RecipeDetail-ingredientLine">
-            <p>얼음</p>
-            <p>15개</p>
-          </div>
+          {ingredient}
         </div>
       </div>
 

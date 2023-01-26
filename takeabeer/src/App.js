@@ -13,21 +13,7 @@ import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/beerList" element={<BeerList />} />
-          <Route path="/recipeList" element={<RecipeList />} />
-          <Route path="/addRecipe" element={<AddRecipe />} />
-          <Route path="/beerDetail" element={<BeerDetail />} />
-          <Route path="/recipeDetail" element={<RecipeDetail />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/mypage" element={<MyPage />} />
-        </Routes>
-      </Router>
-    </>
+    <RecipeDetail recipeId={"63ced5abe15a3a11e40907b4"}></RecipeDetail>
     );
 }
 
