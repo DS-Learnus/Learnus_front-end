@@ -16,10 +16,10 @@ const RecipeDetail = () => {
     <div className="RecipeDetail">
       <div className="RecipeDetail-title">
         <p>수박 카스 칵테일</p>
-        <p>user9</p>
-        <p>2023년 1월 24일 화요일</p>
         <p>좋아요</p>
-        <div className="RecipeDetail-userImg">
+        <div className="RecipeDetail-user">
+          <p>user9</p>
+          <p>2023년 1월 24일 화요일</p>
           <img alt="user" src={require("../img/userImg.png")} />
         </div>
         <div className='thumbs_icon'>

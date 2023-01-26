@@ -2,11 +2,14 @@
   position: absolute;
   width: 850px;
   height: 1422px;
-  left: 358px;
   bottom: 252px;
 
   background: #fffef3;
   border-radius: 12px;
+
+  
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .reviewP {
@@ -283,4 +286,7 @@ input:focus {
   height: 40px;
   left: 350px;
   bottom: -1365px;
+}
+
+.center{
 }
