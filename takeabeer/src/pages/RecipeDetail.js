@@ -23,7 +23,7 @@ const RecipeDetail = () => {
           <img alt="user" src={require("../img/userImg.png")} />
         </div>
         <div className='thumbs_icon'>
-            <FontAwesomeIcon icon={thumbs ? solidThumbs : regularThumbs} onClick={handleLike} size="3x"  color='#A69C9C'/>
+            <FontAwesomeIcon icon={thumbs ? solidThumbs : regularThumbs} onClick={handleLike} size="3x"  color={thumbs ? "#EB9B3E":'#A69C9C'}/>
         </div>
 
       </div>
