@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from '../../node_modules/axios/index';
 import '../css/Modal.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons"; // ♡
@@ -7,7 +8,30 @@ import { faThumbsUp as regularThumbs } from "@fortawesome/free-regular-svg-icons
 import { faThumbsUp as solidThumbs } from "@fortawesome/free-solid-svg-icons"; // ♥︎
 import { Link } from "react-router-dom";
 
-const Modal = ({ open, close }) => {
+const Modal = ({ open, close, userId }) => {
+
+  const [beerName, setBeerName] = useState([]);
+  const [beerLevel, setBeerLevel] = useState([]);
+  const [recipeName, setRecipeName] = useState([]);
+  const [recipeStar, setRecipeStar] = useState([]);
+
+  useEffect(() => {
+    console.log({userId});
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/beer/recommend/${userId}`);
+        setBeerName(response.data.result.name); 
+        setBeerLevel(response.data.result.abv); 
+        setRecipeName(response.data.resultRecipe.name);
+        console.log(response.data); 
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
+
+
     const [thumbs, setThumbs] = useState(false);
     const [heart, setHeart] = useState(false);
 
@@ -28,15 +52,15 @@ const Modal = ({ open, close }) => {
             <main>
                 <div className='recContainer'>
                     <div className='Rec'>
-                        <Link  to={`/beerDetail`} className='gotoDetail'>맥주 이름</Link>
-                        <p>도수 정보</p>
+                        <Link  to={`/beerDetail`} className='gotoDetail'>{beerName}</Link>
+                        <p>{beerLevel}</p>
                         <img alt="terra" src={require("../img/terra.jpg")} />
                         <div className='Modal-heart-icon'>
                             <FontAwesomeIcon  icon={heart ? solidHeart : regularHeart} onClick={handleHeart} size="2x" color='#F24E1E'/>
                         </div>
                     </div>
                     <div className='Rec'>
-                        <Link  to={`/recipeDetail`} className='gotoDetail'>레시피 이름</Link>
+                        <Link  to={`/recipeDetail`} className='gotoDetail'>{recipeName}</Link>
                         <p>평점 정보</p>
                         <img alt="terra" src={require("../img/recipe.jpg")} />
                         <div className='Modal-thumbs_icon'>

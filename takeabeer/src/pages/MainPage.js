@@ -85,7 +85,7 @@ const MainPage = () => {
               </div>
             </div>
           </div>
-          <Modal open={modalOpen} close={closeModal}/>
+          <Modal open={modalOpen} close={closeModal} userId="63cd87f1205b64d3463ebcb6"/>
         </div>
       </div>
     </div>
