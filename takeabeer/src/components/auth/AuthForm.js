@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { useState } from "react";
 
 
 /**
@@ -31,34 +32,33 @@ const AuthFormBlock = styled.div`
     .register-btn {
         background: #998A77;
     }
+
     #degreeTitle {
         color: #413E3E;
         font-size: 17px;
         margin-bottom: 18px;
         font-weight: 400;
+    } 
+
+    .Container {
+        display: flex;
+        margin-bottom: 6rem;
     }
+
     .degreeBtn {
-        width: 80px;
-        height: 40px;
-        background-color: #FFFEF3;
-        color: #EB9B3E;
         border: 1px solid #EB9B3E;
-        margin-left: 6px;
-        margin-bottom: 4rem;
-
-        font-weight: 400;
-        font-size: 19px;
-        line-height: 21px;
-
-        &.active {
-            background-color: #EB9B3E;
-            color: white;
-        }
-    }
-    .select {
-        background: light-green;
+        border-radius: 9px;
+        color: #EB9B3E;
+        background-color: #FFFEF3;
+        width: 82px;
+        margin-left: 3px;
+        margin-right: 3px;
     }
 
+    .active {
+        background-color: #EB9B3E;
+        color: #FFFEF3;
+    }
 `;
 
 const StyledInput = styled.input`
@@ -72,6 +72,16 @@ const StyledInput = styled.input`
 `;
 
 const AuthForm = ({ type, form, onChange, onSubmit}) => {
+
+    const data = [0, 1, 2, 3, 4];
+
+    const [select, setSelect] = useState('');
+
+    const onClick = e => {
+        setSelect(() => {
+            return e.target.value;
+        });
+    }
 
     return (
         <AuthFormBlock>
@@ -94,11 +104,24 @@ const AuthForm = ({ type, form, onChange, onSubmit}) => {
                 { type === 'register' && (
                     <div>
                         <h5 id="degreeTitle">원하는 도수</h5>
-                        <div>
-                            
+                        <div className="Container">
+                            {data.map((item, index) => {
+                                return(
+                                    <div>
+                                        <button
+                                        value={index}
+                                        className={"degreeBtn " + (index == select ? "active" : "")}
+                                        onClick={onClick}
+                                        >
+                                            {item + 1}
+                                        </button>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 )}
+
                 <button className="register-btn"><Link to="/register" style={{ textDecoration: "none", color: '#FFFEF3'}}>회원가입</Link></button>
             </footer>
         </AuthFormBlock>

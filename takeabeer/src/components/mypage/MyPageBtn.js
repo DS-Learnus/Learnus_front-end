@@ -1,6 +1,8 @@
 import '../../css/MyPage/MyPageBtn.css'
 import { Link } from 'react-router-dom'
 
+// Beer 좋아요 목록 버튼 / Recipe 좋아요 목록 버튼
+
 const MyPageBtn = () => {
     return (
         <div className='Container'>

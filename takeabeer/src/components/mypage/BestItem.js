@@ -4,6 +4,9 @@ import { Card } from 'react-bootstrap'
 import '../../css/MyPage/HeartItem.css'
 import { FaThumbsUp } from 'react-icons/fa'
 
+/**
+  레시피 좋아요 누른 아이템
+ */
 
 const BestItem = () => {
   return (

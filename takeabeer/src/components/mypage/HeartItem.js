@@ -4,6 +4,9 @@ import { Card } from 'react-bootstrap'
 import { FaHeart } from 'react-icons/fa'
 import '../../css/MyPage/HeartItem.css'
 
+/**
+ * 맥주 좋아요 누른 아이템
+ */
 
 const HeartItem = () => {
   return (
