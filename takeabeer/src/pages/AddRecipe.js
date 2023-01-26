@@ -4,6 +4,8 @@ import './AddRecipe.css'
 import { Form } from 'react-bootstrap'
 import { FaPlusCircle } from 'react-icons/fa'
 import Items from '../components/Items'
+import ImageUpload from '../components/ImageUpload'
+import AppendItem from '../components/AppendItem'
 
 
 
@@ -22,13 +24,14 @@ const AddRecipe = () => {
           <tbody>
             <tr>
               <th>레시피대로 제조했을 경우, <br/>완성된 음료의 사진을 보여주세요</th>
-              <td><input type="file" /></td>
+              <td><ImageUpload /></td>
               
             </tr>
             <tr>
               <th>제조 시 준비물을 작성해주세요</th>
               <td>
                 <Items />
+                <AppendItem />
                 <FaPlusCircle />
               </td>
               
@@ -40,6 +43,7 @@ const AddRecipe = () => {
             </tr>
           </tbody>
         </table>
+        <button className="saveBtn">SAVE</button>
     </div>
   )
 }
