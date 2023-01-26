@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import "../css/RecipeDetail.css";
-import "../css/Review.css";
-import Review from "../components/Review";
+import React, { useState } from 'react';
+import '../css/RecipeDetail.css';
+import '../css/Review.css';
+import Review from '../components/Review';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp as regularThumbs } from "@fortawesome/free-regular-svg-icons"; // ♡
-import { faThumbsUp as solidThumbs } from "@fortawesome/free-solid-svg-icons"; // ♥︎
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp as regularThumbs } from '@fortawesome/free-regular-svg-icons'; // ♡
+import { faThumbsUp as solidThumbs } from '@fortawesome/free-solid-svg-icons'; // ♥︎
 
 const RecipeDetail = () => {
   const [thumbs, setThumbs] = useState(false);
 
-  const handleLike = e => setThumbs(!thumbs);
+  const handleLike = (e) => setThumbs(!thumbs);
 
   return (
     <div className="RecipeDetail">
@@ -20,12 +20,16 @@ const RecipeDetail = () => {
         <p>2023년 1월 24일 화요일</p>
         <p>좋아요</p>
         <div className="RecipeDetail-userImg">
-          <img alt="user" src={require("../img/userImg.png")} />
+          <img alt="user" src={require('../img/userImg.png')} />
         </div>
-        <div className='thumbs_icon'>
-            <FontAwesomeIcon icon={thumbs ? solidThumbs : regularThumbs} onClick={handleLike} size="3x"  color={thumbs ? "#EB9B3E":'#A69C9C'}/>
+        <div className="thumbs_icon">
+          <FontAwesomeIcon
+            icon={thumbs ? solidThumbs : regularThumbs}
+            onClick={handleLike}
+            size="3x"
+            color={thumbs ? '#EB9B3E' : '#A69C9C'}
+          />
         </div>
-
       </div>
 
       <div className="RecipeDetail-ingredient">
