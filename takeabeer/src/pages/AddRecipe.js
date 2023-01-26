@@ -1,14 +1,16 @@
-import { useState } from "react";
-import React from "react";
-import "../css/AddRecipe.css";
-import { Form } from "react-bootstrap";
-import { FaPlusCircle } from "react-icons/fa";
-import Items from "../components/Items";
+import React from 'react';
+import '../css/AddRecipe.css';
+import { Form } from 'react-bootstrap';
+import { FaPlusCircle } from 'react-icons/fa';
+import Items from '../components/Items';
+import { useState } from 'react';
+import ImageUpload from '../components/ImageUpload';
+import AppendItem from '../components/AppendItem';
 
 const AddRecipe = () => {
   return (
     <div id="addrecipebody">
-      <h1 className="listTitle" style={{ color: "#B9A690" }}>
+      <h1 className="listTitle" style={{ color: '#B9A690' }}>
         Add New Recipe
       </h1>
       <p className="listText">
@@ -30,13 +32,14 @@ const AddRecipe = () => {
               완성된 음료의 사진을 보여주세요
             </th>
             <td>
-              <input type="file" />
+              <ImageUpload />
             </td>
           </tr>
           <tr>
             <th>제조 시 준비물을 작성해주세요</th>
             <td>
               <Items />
+              <AppendItem />
               <FaPlusCircle />
             </td>
           </tr>
@@ -49,6 +52,7 @@ const AddRecipe = () => {
           </tr>
         </tbody>
       </table>
+      <button className="saveBtn">SAVE</button>
     </div>
   );
 };
