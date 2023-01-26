@@ -33,7 +33,7 @@
 
 .BeerDetail-Info {
   position: absolute;
-  width: 1440px;
+  width: 1520px;
   height: 329px;
   bottom: 1734px;
   
@@ -50,13 +50,13 @@
   width: 793px;
   height: 195px;
   left: 537px;
-  top: 35px;
+  top: 45px;
 }
 
 .BeerDetail-line {
   width: 782px;
   height: 0px;
-  margin: 25px;
+  margin: 30px;
   border: 2px solid #998a77;
   position: relative;
 }
@@ -74,7 +74,7 @@
   white-space: nowrap;
 
   position: absolute;
-  bottom: -11px;
+  bottom: -1px;
   letter-spacing: -0.011em;
 
   color: #4d3a3a;
@@ -83,18 +83,19 @@
 .BeerDetail-line p:nth-child(2) {
   /* 실제 정보*/
   position: absolute;
-  width: 500px;
-  left: 270px;
-  bottom: -13px;
+  width: 520px;
+  right:0;
+  bottom: -22px;
 
   font-family: "NanumSquareNeoRegular";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 130%;
 
+  padding: 15px;
+
   letter-spacing: -0.011em;
-  white-space: nowrap;
 
   color: #a69c9c;
   text-align: right;
