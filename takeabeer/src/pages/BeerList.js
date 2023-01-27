@@ -37,18 +37,6 @@ const BeerList = () => {
           <Col md={3}>
             <BeerItem />
           </Col>
-          <Col md={3}>
-            <BeerItem />
-          </Col>
-          <Col md={3}>
-            <BeerItem />
-          </Col>
-          <Col md={3}>
-            <BeerItem />
-          </Col>
-          <Col md={3}>
-            <BeerItem />
-          </Col>
         </Row>
       </Container>
       <PaginationElements />

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 function ImageUpload() {
@@ -14,6 +14,31 @@ function ImageUpload() {
     setImage("");
   }
 
+  const clearImage = () => {
+    setImage(null)
+    setImage("")
+  }
+
+
+
+  const [attachment, setAttachment] = useState() 
+  const [file, setFile] = useState('')
+  
+  const onFileChange = (event) => {
+    const {target:{files, value}} = event;
+    const theFile = files[0];
+    const reader = new FileReader();
+    setFile(value)
+    reader.onloadend = (finishedEvent) => {
+      const { currentTarget: {result}} = finishedEvent
+      setAttachment(result)
+    }
+    reader.readAsDataURL(theFile);
+  }
+  const onClearAttachment = () => {
+    setAttachment(null)
+    setFile('')
+  };
   /*
   function handleImage(e) {
     console.log(e.target.files)
@@ -33,33 +58,25 @@ function ImageUpload() {
 
   return(
     <div>
-      {image && (
-        <img
+            <form>
+        <input type="file" accept="image/*" onChange={onFileChange} value={file}/>
+        {attachment && (
+          <div>
+
+            <img
           alt="sample"
-          src={image}
+          src={attachment}
           style={{
             margin: "center",
             width: "40vh",
             height: "40vh",
-            marginBottom: "1em",
+            marginTop: "1em",
+            marginRight: "1em",
           }}
         />
-      )}
-      
-      <div
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        >
-          <input
-            name="imgUpload"
-            type="file"
-            accept="image/*"
-            onChange={saveImage}
-          />
 
-          <button
+            <button
+            onClick={onClearAttachment}
             style={{
               backgroundColor: "#B9A690",
               border: "none",
@@ -69,13 +86,14 @@ function ImageUpload() {
               height: "35px",
               cursor: "pointer",
             }}
-            onClick={() => deleteImage()}
-            >
-              사진 숨기기
-            </button>
+            >사진 삭제</button>
+          </div>
+        )}
+      </form>
         </div>
           
-    </div>
+
+
 
   )
 }

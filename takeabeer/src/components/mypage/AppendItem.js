@@ -39,7 +39,10 @@ const AppendItem = () => {
         cursor: "pointer",
         paddingTop: "-1px",
       }}>
-        <FaPlusCircle className="plus"/>
+        <FaPlusCircle className="plus"
+        style={{
+
+        }}/>
       </button>
     </CreateListDiv>
   )

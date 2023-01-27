@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { Pagination } from 'react-bootstrap';
 import '../css/PaginationElements.css';
 
@@ -11,15 +12,20 @@ for (let number = 1; number <= 5; number++) {
     </Pagination.Item>,
   );
 }
-const PaginationElements = () => {
+const PaginationElements = ({
+  postsPerPage,
+  totalPosts,
+  currentPage,
+  paginate,
+}) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   return (
     <div>
-      <Pagination id="pagination">
-        <Pagination.First />
-        <Pagination.Prev />
-        <Pagination.Next />
-        <Pagination.Last />
-      </Pagination>
       <Pagination className="pagination">
         <Pagination.First />
         <Pagination.Prev />

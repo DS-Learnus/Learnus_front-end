@@ -1,13 +1,17 @@
+import { useState } from 'react';
 import React from 'react';
 import '../css/AddRecipe.css';
 import { Form } from 'react-bootstrap';
 import { FaPlusCircle } from 'react-icons/fa';
 import Items from '../components/Items';
-import { useState } from 'react';
-import ImageUpload from '../components/ImageUpload';
 import AppendItem from '../components/AppendItem';
+import ImageUpload from '../components/ImageUpload';
 
 const AddRecipe = () => {
+  const [name, setName] = useState('');
+
+  const [content, setContent] = useState('');
+
   return (
     <div id="addrecipebody">
       <h1 className="listTitle" style={{ color: '#B9A690' }}>
@@ -21,7 +25,13 @@ const AddRecipe = () => {
           <tr>
             <th>레시피 이름을 알려주세요</th>
             <td>
-              <Form.Control type="text" placeholder="레시피 이름" />
+              <Form.Control
+                type="text"
+                placeholder="레시피 이름"
+                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </td>
           </tr>
         </thead>
@@ -38,16 +48,25 @@ const AddRecipe = () => {
           <tr>
             <th>제조 시 준비물을 작성해주세요</th>
             <td>
-              <Items />
               <AppendItem />
-              <FaPlusCircle />
             </td>
           </tr>
 
           <tr>
             <th>레시피를 설명해주세요</th>
             <td>
-              <Form.Control as="textarea" rows={5} />
+              <Form.Control
+                as="textarea"
+                placeholder="음료 제조 레시피를 순서대로 자세히 작성해주세요.
+              예)
+              1. 수박을 원하는 크기로 썰어 잔에 넣어주세요.
+              2. 맥주를 부어주세요.
+              3. 완성입니다!"
+                rows={5}
+                required
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
             </td>
           </tr>
         </tbody>
