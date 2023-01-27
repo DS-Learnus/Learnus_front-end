@@ -23,4 +23,6 @@ export function registerUser(dataToSubmit) {
         type: REGISTER_USER,
         payload: request
     }
+
 }
+

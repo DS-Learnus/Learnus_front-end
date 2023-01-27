@@ -4,18 +4,15 @@ import { Card } from 'react-bootstrap'
 import { FaHeart } from 'react-icons/fa'
 import '../../css/MyPage/HeartItem.css'
 
-/**
- * 맥주 좋아요 누른 아이템
- */
-
 const HeartItem = () => {
+
   return (
     <div>
         <Link to="/beerDetail">
         <Card.Img variant="top" src="https://picsum.photos/250/250" alt="맥주 사진" className="beerPhoto"/>
         </Link>
         <Link to="/beerDetail" style={{ textDecoration: "none", color: '#000000'}}>
-        <div className='title'>맥주이름</div>
+        <div className='title'>beerTitle</div>
         </Link>
     <div className="heart">
         <FaHeart />

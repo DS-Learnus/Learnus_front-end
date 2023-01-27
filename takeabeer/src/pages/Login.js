@@ -2,12 +2,14 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../_actions/user_action";
 import '../css/auth/Login.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
 
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
+    const[userID, setUserID] = useState("");
+    const navigate = useNavigate();
 
     const onEmailHandler = (event) => {
         setEmail(event.currentTarget.value);
@@ -28,9 +30,21 @@ function Login() {
         let body = {
             email: Email,
             password: Password,
+            _id:userID,
         }
 
-        dispatch(loginUser(body));
+        dispatch(loginUser(body))
+        .then(response => {
+            
+            setUserID(response.payload.user._id);
+            console.log(userID);
+
+            if(response.payload.loginSuccess){
+                navigate("/mypageBeer");
+            } else {
+                alert('Error')
+            }
+        })
     }
 
     return (
@@ -52,7 +66,6 @@ function Login() {
                     회원가입
                 </Link>
             </form>
-            
             </div>
         </div>
     )
