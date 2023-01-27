@@ -1,5 +1,9 @@
 /* 배경 */
 .BeerDetail {
+  display: 'flex';
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 2434px;
@@ -16,7 +20,7 @@
   left: 628px;
   bottom: 340px;
 
-  font-family: "NanumSquareNeoRegular";
+  font-family: 'NanumSquareNeoRegular';
   font-style: normal;
   font-weight: 400;
   font-size: 80px;
@@ -66,7 +70,7 @@
   width: 80px;
   height: 24px;
 
-  font-family: "NanumSquareNeoRegular";
+  font-family: 'NanumSquareNeoRegular';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -87,7 +91,7 @@
   right:0;
   bottom: -22px;
 
-  font-family: "NanumSquareNeoRegular";
+  font-family: 'NanumSquareNeoRegular';
   font-style: normal;
   font-weight: 400;
   font-size: 18px;

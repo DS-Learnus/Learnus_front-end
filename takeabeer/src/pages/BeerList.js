@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import BeerItem from '../components/BeerItem';
-import PaginationElements from '../components/PaginationElements';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../css/BeerList.css';
 import axios from 'axios';

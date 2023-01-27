@@ -20,8 +20,8 @@ function App() {
         <Route path="/beerList" element={<BeerList />} />
         <Route path="/recipeList" element={<RecipeList />} />
         <Route path="/addRecipe" element={<AddRecipe />} />
-        <Route path="/beerDetail" element={<BeerDetail />} />
-        <Route path="/recipeDetail" element={<RecipeDetail />} />
+        <Route path="/beerDetail/:beerId" element={<BeerDetail />} />
+        <Route path="/recipeDetail/:recipeId" element={<RecipeDetail />} />
         <Route path="/mypageBeer" element={<MyPageBeer />} />
         <Route path="/mypageRecipe" element={<MyPageRecipe />} />
         <Route path="/login" element={<Login />} />

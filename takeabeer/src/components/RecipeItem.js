@@ -1,15 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
 import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa';
 
 const RecipeItem = ({ content }) => {
-  console.log(content);
+  console.log('content: ' + content);
+  const navigate = useNavigate();
+  const userId = '63d3544d21b56c97a5cbde4a'; // 임시 고정
+  const recipeId = content._id;
+
+  const movePage = () => {
+    console.log(content);
+    navigate(`/recipeDetail/${recipeId}`, {
+      state: {
+        userId: userId,
+        recipeId: recipeId,
+      },
+    });
+  };
 
   return (
     <div>
-      <Link
-        to={`/recipeDetail/${content._id}`}
+      <div
+        onClick={movePage}
         recipeid={content._id}
         userid={content}
         style={{ textDecoration: 'none', justifyContent: 'center' }}
@@ -45,7 +58,7 @@ const RecipeItem = ({ content }) => {
             </span>
           </Card.Footer>
         </Card>
-      </Link>
+      </div>
 
       <br></br>
     </div>

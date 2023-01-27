@@ -3,11 +3,19 @@ import Review from '../components/Review';
 import axios from '../../node_modules/axios/index';
 import '../css/BeerDetail.css';
 import '../css/Review.css';
+import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; // ♡
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'; // ♥︎
 
-const BeerDetail = ({ beerId, userId }) => {
+const BeerDetail = () => {
+  // userId는 리덕스에서 넘겨줍니다. 우선은 BeerItem에서 임시로 userId를 작성하여 전송
+  const location = useLocation();
+  const userId = location.state.userId;
+  const beerId = location.state.beerId;
+
+  console.log('userId: ', userId);
+  console.log('beerId: ', beerId);
   const [name, setName] = useState([]);
   const [star, setStar] = useState([]);
   const [level, setLevel] = useState([]);
@@ -36,20 +44,22 @@ const BeerDetail = ({ beerId, userId }) => {
       }
     };
     fetchData();
-  }, []);
+  }, [beerId]);
 
   /* 좋아요 여부 get */
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`api/user/mypage/${userId}`);
+        const response = await axios.get(
+          `beerDetail/api/user/mypage/${userId}`,
+        );
         setLikeId(response.data.mylikeBeer);
       } catch (e) {
         console.log(e);
       }
     };
     fetchData();
-  }, []);
+  }, [userId]);
 
   /* 좋아요 결과 post */
   const postHeart = async () => {
