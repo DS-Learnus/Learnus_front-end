@@ -13,13 +13,33 @@ const BeerItem = ({ content }) => {
         userid={content}
         style={{ textDecoration: 'none' }}
       >
-        <Card style={{ width: '18rem', display: 'flex' }}>
-          <Card.Img
-            variant="top"
-            src="https://picsum.photos/250/250"
-            alt="맥주 사진"
-          />
-
+        <Card
+          style={{
+            width: '18rem',
+            display: 'flex',
+            justifyContent: 'center',
+          }}
+        >
+          <div
+            style={{
+              width: '100%',
+              height: '18rem',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              overFlow: 'hidden',
+            }}
+          >
+            <Card.Img
+              variant="top"
+              src={content.image}
+              style={{
+                overFit: 'cover',
+                height: '100%',
+              }}
+              alt="맥주 사진"
+            />
+          </div>
           <Card.Body>
             <Card.Text>
               {content.name}{' '}
