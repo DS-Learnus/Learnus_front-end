@@ -1,10 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useSelector } from 'react-redux';
 
 const NavBar = () => {
   // 유저 상태 관리, 로그인-로그아웃 여부
@@ -38,7 +35,8 @@ const NavBar = () => {
         </Container> 
           <Nav className="me-auto">
           &nbsp;&nbsp;&nbsp;
-          <Nav.Link href="/login">Login</Nav.Link>&nbsp;&nbsp;
+          <Nav.Link href="/mypageBeer">MyPage</Nav.Link>
+          <Nav.Link href="/login">LogOut</Nav.Link>&nbsp;&nbsp;
           {/* <Nav.Link href="#">Logout</Nav.Link> */}
           </Nav>
       </Navbar>

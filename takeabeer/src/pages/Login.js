@@ -9,6 +9,7 @@ function Login() {
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
     const[userID, setUserID] = useState("");
+
     const navigate = useNavigate();
 
     const onEmailHandler = (event) => {
@@ -35,9 +36,9 @@ function Login() {
 
         dispatch(loginUser(body))
         .then(response => {
-            
+
             setUserID(response.payload.user._id);
-            console.log(userID);
+            
 
             if(response.payload.loginSuccess){
                 navigate("/");

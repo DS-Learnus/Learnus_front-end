@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../css/main-page.css";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
+import { useSelector } from 'react-redux';
 
 const MainPage = () => {
+  const userID = useSelector(state => state.user.loginSuccess.user._id);
+  console.log(userID);
+  localStorage.setItem("id", JSON.stringify({userID}));
+
+  useEffect(() => {
+    if(localStorage.getItem('id') === null) {
+      window.location.href('http://localhost:3000/login');
+    }
+  }, []);
+
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
