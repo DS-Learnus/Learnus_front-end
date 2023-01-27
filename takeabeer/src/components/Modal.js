@@ -55,7 +55,7 @@ const Modal = ({ open, close, userId }) => {
         setRecipeScore(response.data.resultRecipe.score);
         setRecipeId(response.data.resultRecipe._id);
         setRImage(response.data.resultRecipe.image);*/
-        console.log(response.data);
+        console.log(userId);
       } catch (e) {
         console.log(e);
       }
@@ -75,7 +75,7 @@ const Modal = ({ open, close, userId }) => {
       <div onClick={moveBeerPage} className="gotoDetail">
         {beerName}
       </div>
-      <p>{beerLevel}</p>
+      <p>도수: {beerLevel}</p>
       <img alt="추천 맥주 이미지" src={beerImage} />
       <div className="Modal-heart-icon">
         <FontAwesomeIcon
@@ -112,7 +112,6 @@ const Modal = ({ open, close, userId }) => {
     </div>
     </div>
   }
-
 
   return (
     <div className={open ? 'openModal modal' : 'modal'}>

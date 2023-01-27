@@ -181,6 +181,8 @@ header > p {
 
 .gotoDetail {
   text-decoration: none;
+  left:50%;
+  transform: translate(-50%, 0%);
   
   color: #6F6457;  
   font-family: 'NanumSquare Neo';
@@ -191,7 +193,6 @@ header > p {
 
   position: absolute;
   height: 45px;
-  left: 75px;
   top: 251px;
   text-align: center;
   letter-spacing: -0.011em;

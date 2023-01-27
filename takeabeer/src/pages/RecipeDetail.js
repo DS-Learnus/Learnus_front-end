@@ -49,7 +49,7 @@ const RecipeDetail = () => {
     console.log({ recipeId });
     const fetchData = async () => {
       try {
-        const response = await axios.get(`api/user/checkRecipeLike/${recipeId}/${userId}`);
+        const response = await axios.get(`http://localhost:3000/api/user/checkRecipeLike/${recipeId}/${userId}`,);
         setLike(response.data.like);
         console.log(response.data);
       } catch (e) {

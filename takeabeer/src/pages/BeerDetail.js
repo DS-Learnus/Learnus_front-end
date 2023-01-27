@@ -17,7 +17,7 @@ const BeerDetail = () => {
   console.log('userId: ', userId);
   console.log('beerId: ', beerId);
   const [name, setName] = useState([]);
-  const [star, setStar] = useState([]);
+  const [company, setCompany] = useState([]);
   const [level, setLevel] = useState([]);
   const [ingre, setIngre] = useState([]);
   const [intro, setIntro] = useState([]);
@@ -30,7 +30,7 @@ const BeerDetail = () => {
       try {
         const response = await axios.get(`/api/beer/${beerId}`);
         setName(response.data.beerDetail.name);
-        setStar(response.data.likes);
+        setCompany(response.data.beerDetail.company);
         setLevel(response.data.beerDetail.abv);
         setIngre(response.data.beerDetail.ingredient);
         setIntro(response.data.beerDetail.intro);
@@ -48,7 +48,7 @@ const BeerDetail = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `beerDetail/api/user/mypage/${userId}`,
+          `http://localhost:3000/api/user/checkBeerLike/${beerId}/${userId}`,
         );
         setLike(response.data.mylikeBeer);
       } catch (e) {
@@ -88,8 +88,8 @@ const BeerDetail = () => {
         <p>{name}</p>
         <div className="BeerDetail-lines">
           <div className="BeerDetail-line">
-            <p>평균 별점</p>
-            <p>{star}</p>
+            <p>회사</p>
+            <p>{company}</p>
           </div>
           <div className="BeerDetail-line">
             <p>도수</p>

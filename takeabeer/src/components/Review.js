@@ -56,9 +56,9 @@ const Review = ({reviewId, isBeer}) => {
     try {
     console.log("Beer Review");
     await axios.post(`http://localhost:3000/api/beer/review`, {
-      "beerId": {reviewId}, 
-      "score": {score}, 
-      "content": {inputText} 
+      "beerId": `${reviewId}`, 
+      "score": `${score}`, 
+      "content": `${inputText}` 
     });
     console.log("Beer Review post");
     } catch (e) {
@@ -73,9 +73,9 @@ const Review = ({reviewId, isBeer}) => {
       
     console.log("Recipe Review");
     await axios.post(`http://localhost:3000/api/recipe/review`, {
-      "recipeId": {reviewId}, 
-      "score": {score}, 
-      "content": {inputText} 
+      "recipeId": `${reviewId}`, 
+      "score": `${score}`, 
+      "content": `${inputText}` 
     });
     console.log("Recipe Review post");
     } catch (e) {
