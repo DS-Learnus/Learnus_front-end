@@ -9,6 +9,7 @@ const Review = ({reviewId, isBeer}) => {
   const scoreList = numList.map((num,index)=><button onClick={()=>{setScore(num); console.log(score);}} type="button" className="btn btn-secondary" key={index}>{num}</button>)
   const [score, setScore] = useState(null);    
   const [comments, setComments] = useState([]);
+  const {avgScore, setAvgScore} = useState([]);
 
   
   const [inputText, setInputText] = useState('');
@@ -53,7 +54,7 @@ const Review = ({reviewId, isBeer}) => {
     {isBeer? getBeerCmt() : getRecipeCmt() }
   }, [] )
 
-  
+
   /* 맥주 후기 post */
   const postBeerReview = async () => {
     await axios.post(`api/beer/review`, {
@@ -75,6 +76,7 @@ const Review = ({reviewId, isBeer}) => {
     console.log("Recipe Review post");
   }
 
+  /* review 배열 접근 */
   const cmt = () => {
     console.log(comments);
     const list = comments.map((comment, index) => {
