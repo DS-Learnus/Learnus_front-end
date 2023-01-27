@@ -7,15 +7,15 @@ import AddRecipe from './pages/AddRecipe';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BeerDetail from './pages/BeerDetail';
 import RecipeDetail from './pages/RecipeDetail';
-import LoginPage from './pages/LoginPage';
 import MyPageBeer from './pages/MyPageBeer';
-import RegisterPage from './pages/RegisterPage';
 import MyPageRecipe from './pages/MyPageRecipe';
+import Login from './pages/Login';
+import Register from './pages/Register';
+
 
 function App() {
   return (
-    <>
-      <Router>
+    <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/beerList" element={<BeerList />} />
@@ -23,13 +23,12 @@ function App() {
           <Route path="/addRecipe" element={<AddRecipe />} />
           <Route path="/beerDetail" element={<BeerDetail />} />
           <Route path="/recipeDetail" element={<RecipeDetail />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
           <Route path="/mypageBeer" element={<MyPageBeer />} />
           <Route path="/mypageRecipe" element={<MyPageRecipe />}/>
+          <Route path="/login" element={<Login />}/>
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
-    </>
   );
 }
 

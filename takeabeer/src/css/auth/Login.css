@@ -1,0 +1,56 @@
+.authWhiteBox {
+    background: #FFFEF3;
+    width: 833px;
+    border-radius: 20px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.authTitle {
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.authSubTitle {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+.formContainer{
+    margin-left: auto;
+    margin-right: auto;
+}
+.emailInput {
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    margin-bottom: 3rem;
+    background-color: #FFFEF3;
+}
+.passwordInput{
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    margin-bottom: 3rem;
+    background-color: #FFFEF3;
+}
+
+.loginBtn{
+    background: #EB9B3E;
+    border-radius: 9px;
+    color: #FFFEF3;
+    border-style: none;
+    padding: 9px;
+    margin-bottom: 2rem;
+}
+
+.registerBtn {
+    background: #998A77;
+    border-radius: 9px;
+    color: #FFFEF3;
+    border-style: none;
+    padding: 9px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
