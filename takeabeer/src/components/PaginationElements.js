@@ -1,10 +1,16 @@
-import React from "react";
-import { Pagination } from "react-bootstrap";
-import "../css/PaginationElements.css";
+import React from 'react';
+import { Pagination } from 'react-bootstrap';
+import '../css/PaginationElements.css';
 
 const PaginationElements = () => {
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <Pagination id="pagination">
         <Pagination.First />
         <Pagination.Prev />
