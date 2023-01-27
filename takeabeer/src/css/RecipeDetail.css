@@ -1,5 +1,5 @@
 .RecipeDetail {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 3590px;
 
@@ -8,14 +8,14 @@
 }
 
 .RecipeDetail-title {
+  position: relative;
   float: center;
   width: 100%;
   height: 456px;
   top: 0px;
-  position: relative;
 
-  background-image: url(../img/recipe.jpg);
   background-size: cover;
+  margin-bottom : 60px;
 
   opacity: 0.88;
 }
@@ -161,7 +161,7 @@
   height: 397px;
   top: 592px;
   margin: 0 auto;
-
+  margin-bottom : 60px;
   background: #fffef3;
   border-radius: 20px;
 }
@@ -254,6 +254,7 @@
   height: auto;
   overflow: hidden;
   margin: 0 auto;
+  margin-bottom : 60px;
 
   background: #fffef3;
   border-radius: 20px;

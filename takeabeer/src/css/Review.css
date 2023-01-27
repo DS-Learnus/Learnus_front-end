@@ -11,7 +11,9 @@
   flex-direction: column;
   
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);  
+  margin-bottom : 60px;
+
 }
 
 .reviewP {
@@ -124,6 +126,7 @@ input:focus {
   height: auto;
   overflow: hidden;
   margin: 0 auto;
+  margin-bottom : 30px;
   background: radial-gradient(
     50% 50% at 50% 50%,
     #d4debd 0%,

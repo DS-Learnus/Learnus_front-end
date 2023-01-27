@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const MyPageBtn = () => {
     return (
-        <div className='Container'>
+        <div className='MyPageContainer'>
             <Link to="/mypageBeer" style={{ textDecoration: "none", color: '#FFFEF3'}}><span className='beerBtn'>BEER</span></Link>
             <Link to="/mypageRecipe" style={{ textDecoration: "none", color: '#FFFEF3'}}><span className='recipeBtn'>RECIPE</span></Link>
         </div>
