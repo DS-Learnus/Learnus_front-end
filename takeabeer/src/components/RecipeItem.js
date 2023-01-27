@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import { FaRegThumbsUp, FaThumbsUp } from 'react-icons/fa'
 
 const RecipeItem = () => {
+
+  const [rlikes, setRlikes ] = useState(false);
+
+  const handleRlike = () => {
+    setRlikes(!rlikes);
+  }
+
   return (
     <div>
           <Card style={{ width: '18rem', display: 'flex' }}>
@@ -13,9 +20,23 @@ const RecipeItem = () => {
       <Card.Footer>
           <small className="text-muted" id="recipeName">레시피 이름 by 작성자</small>
           <span className="likes" style={{float: 'right'}}>
-          <FaRegThumbsUp />
-          <FaThumbsUp />
+          <div className="likeIcon" onClick={handleRlike}>
+      {rlikes ? (
+        <FaThumbsUp 
+        style={{
+        color: "#EB9B3E"
+        }}
+        />
+      ) : (
+        <FaRegThumbsUp
+        style={{
+          color: "#A69C9C"
+          }}
+        />
+      )}
+    </div>
           </span>
+
 
         </Card.Footer>
     </Card>

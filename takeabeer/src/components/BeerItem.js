@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 import { FaRegHeart, FaHeart } from 'react-icons/fa'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; // ♡
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'; // ♥︎
 const BeerItem = ({beerdetail}) => {
+  
+  const [likes, setLikes ] = useState(false);
+
+  const handleLike = () => {
+    setLikes(!likes);
+  }
+
   return (
     <div>
 
@@ -17,8 +27,25 @@ const BeerItem = ({beerdetail}) => {
       <Card.Text>
           <small className="text-muted">평균 평점</small>
           <small className="likesBeer" style={{float: 'right'}}>
-          <FaRegHeart />
-          <FaHeart />
+          <span>
+          <div className="likeIcon" onClick={handleLike}>
+      {likes ? (
+        //좋아요
+        <FaHeart 
+        style={{
+        color: "#F24E1E"
+        }}
+        />
+      ) : (
+        //좋아요 취소
+        <FaRegHeart
+        style={{
+          color: "#F24E1E"
+          }}
+        />
+      )}
+    </div>
+          </span>
           </small>
 
 
