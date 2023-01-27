@@ -53,23 +53,31 @@ const Review = ({reviewId, isBeer}) => {
 
   /* 맥주 후기 post */
   const postBeerReview = async () => {
-    await axios.post(`api/beer/review`, {
+    try {
+    await axios.post(`http://localhost:3000/api/beer/review/`, {
       "beerId": {reviewId}, 
       "score": {score}, 
       "content": {inputText} 
     });
     console.log("Beer Review post");
+    } catch (e) {
+      console.log(e);
+    }
   }
 
 
   /* 레시피 후기 post */
   const postRecipeReview = async () => {
-    await axios.post(`api/recipe/review`, {
+    try{
+    await axios.post(`http://localhost:3000/api/recipe/review/`, {
       "recipeId": {reviewId}, 
       "score": {score}, 
       "content": {inputText} 
     });
     console.log("Recipe Review post");
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   /* review 배열 접근 */
@@ -104,8 +112,8 @@ const Review = ({reviewId, isBeer}) => {
         </button>
       </div>
 
-      <div className="review-read">
-        <p className="reviewP">코멘트</p>
+      <div className={comments.length!==0? "review-read isReview" : "review-read"}>
+        <p className="reviewP">코멘트 <span className="small">({comments.length})</span></p>
           {cmt()}
       </div>
     </div>

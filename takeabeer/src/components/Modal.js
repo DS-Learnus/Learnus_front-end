@@ -54,7 +54,7 @@ const Modal = ({ open, close, userId }) => {
                 <Link to={`/beerDetail`} className="gotoDetail">
                   {beerName}
                 </Link>
-                <p>{beerLevel}</p>
+                <p>도수: {beerLevel}</p>
                 <img alt="추천 맥주 이미지" src={beerImage} />
                 <div className="Modal-heart-icon">
                   <FontAwesomeIcon

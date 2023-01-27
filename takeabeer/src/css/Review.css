@@ -119,6 +119,13 @@ input:focus {
 
 
 /* ~~~~~코멘트 확인창~~~~~ */
+.small{
+  color:#808080;
+  font-family: "NanumSquareNeoRegular";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+}
 
 .review-read {
   float:center;
@@ -127,6 +134,9 @@ input:focus {
   overflow: hidden;
   margin: 0 auto;
   margin-bottom : 30px;
+}
+
+.isReview {
   background: radial-gradient(
     50% 50% at 50% 50%,
     #d4debd 0%,

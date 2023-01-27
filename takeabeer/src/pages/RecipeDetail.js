@@ -108,7 +108,9 @@ const RecipeDetail = () => {
 
       <div className="RecipeDetail-ingredient">
         <p>재료</p>
-        <div className="RecipeDetail-ingredientContainer">{ingredient}</div>
+        <div className="RecipeDetail-ingredientContainer">
+          {ingredient}
+          </div>
       </div>
 
       <div className="post">
