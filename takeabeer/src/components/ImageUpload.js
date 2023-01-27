@@ -58,69 +58,8 @@ function ImageUpload() {
 
   return(
     <div>
-      {image && (
-        <img
-          alt="sample"
-          src={image}
-          style={{
-            margin: "center",
-            width: "40vh",
-            height: "40vh",
-            marginBottom: "1em",
-          }}
-        />
-      )}
-      
-      <div
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        >
-          <input
-            name="imgUpload"
-            type="file"
-            accept="image/*"
-            onChange={saveImage}
-            
-          />
-
-          <button
-            style={{
-              backgroundColor: "#B9A690",
-              border: "none",
-              borderRadius: "5%",
-              color: "white",
-              width: "130px",
-              height: "35px",
-              cursor: "pointer",
-              marginRight: "1em",
-            }}
-            onClick={() => deleteImage()}
-            >
-              사진 숨기기
-            </button>
-
-            <button
-            style={{
-              backgroundColor: "#B9A690",
-              border: "none",
-              borderRadius: "5%",
-              color: "white",
-              width: "130px",
-              height: "35px",
-              cursor: "pointer",
-            }}
-            onClick={clearImage}
-            >
-              사진 삭제
-            </button>
-
-
-
             <form>
         <input type="file" accept="image/*" onChange={onFileChange} value={file}/>
-        <input type="submit" value="제출하기" />
         {attachment && (
           <div>
 
@@ -136,22 +75,6 @@ function ImageUpload() {
           }}
         />
 
-<button
-            style={{
-              backgroundColor: "#B9A690",
-              border: "none",
-              borderRadius: "5%",
-              color: "white",
-              width: "130px",
-              height: "35px",
-              cursor: "pointer",
-              marginRight: "1em",
-            }}
-            onClick={() => deleteImage()}
-            >
-              사진 숨기기
-            </button>
-            
             <button
             onClick={onClearAttachment}
             style={{
@@ -170,7 +93,7 @@ function ImageUpload() {
         </div>
           
 
-    </div>
+
 
   )
 }

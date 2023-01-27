@@ -1,9 +1,26 @@
 import React from "react";
 import "../css/Items.css";
 import { Form } from "react-bootstrap";
-const Items = () => {
+import styled from "styled-components";
+
+const DetailDiv = styled.div`
+  div {
+    margin-bottom: 2em;
+    width: 320px;
+  }
+`
+const Items = (props) => {
   return (
-    <div className="ItemInfo">
+    <DetailDiv>
+
+    {props.countList && props.countList.map((item, i) => (
+
+
+    <div key={i} className="ItemInfo"
+    style={{
+      width: "50vh",
+      marginBottom: "0.5em",
+    }}>
       <Form.Control type="text" placeholder="재료명" className="itemName" />
       <Form.Control
         type="number"
@@ -19,6 +36,8 @@ const Items = () => {
         <option value="3">조각</option>
       </Form.Select>
     </div>
+        ))}
+    </DetailDiv>
   );
 };
 
