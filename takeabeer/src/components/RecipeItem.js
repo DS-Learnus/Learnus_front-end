@@ -12,15 +12,29 @@ const RecipeItem = ({ content }) => {
         to={`/recipeDetail/${content._id}`}
         recipeid={content._id}
         userid={content}
-        style={{ textDecoration: 'none' }}
+        style={{ textDecoration: 'none', justifyContent: 'center' }}
       >
         <Card style={{ width: '18rem', display: 'flex' }}>
-          <Card.Img
-            variant="top"
-            src="https://picsum.photos/250/250 "
-            alt="제조 완료된 사진"
-          />
-
+          <div
+            style={{
+              width: '100%',
+              height: '18rem',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              overFlow: 'hidden',
+            }}
+          >
+            <Card.Img
+              variant="top"
+              src={content.image}
+              alt="제조 완료된 사진"
+              style={{
+                overFit: 'cover',
+                height: '100%',
+              }}
+            />
+          </div>
           <Card.Footer>
             <small className="text-muted" id="recipeName">
               {content.name} by {content.userId.nikname}
