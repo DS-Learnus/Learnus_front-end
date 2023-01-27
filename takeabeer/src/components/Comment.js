@@ -7,10 +7,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons"; // ♥︎
 
 const Comment = ({ comment }) => {
 
-  const [userId, setUserId] = useState(comment.id);  
   const [userComment, setUserComment] = useState(comment.content);
   const [userScore, setUserScore] = useState(comment.score);
-  const [userName, setUserName] = useState(comment.id);  
+  const [userName, setUserName] = useState(comment.userId.nikname);  
 
   return (
     <div className="c">
