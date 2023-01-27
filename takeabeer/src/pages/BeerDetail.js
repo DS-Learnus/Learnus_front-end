@@ -22,10 +22,7 @@ const BeerDetail = () => {
   const [ingre, setIngre] = useState([]);
   const [intro, setIntro] = useState([]);
   const [image, setImage] = useState([]);
-  const [likeId, setLikeId] = useState([]);
-
-  const [heart, setHeart] = useState(false);
-  const handleLike = (e) => setHeart(!heart);
+  const [like, setLike] = useState([]);
 
   /* 맥주 정보 get */
   useEffect(() => {
@@ -53,7 +50,7 @@ const BeerDetail = () => {
         const response = await axios.get(
           `beerDetail/api/user/mypage/${userId}`,
         );
-        setLikeId(response.data.mylikeBeer);
+        setLike(response.data.mylikeBeer);
       } catch (e) {
         console.log(e);
       }
@@ -63,11 +60,15 @@ const BeerDetail = () => {
 
   /* 좋아요 결과 post */
   const postHeart = async () => {
-    await axios.post(`api/user/likeBeer`, {
+    await axios.post(`http://localhost:3000/api/user/likeBeer `, {
       beerId: `${beerId}`,
       userId: `${userId}`,
     });
   };
+
+  
+  const [heart, setHeart] = useState({like});
+  const handleLike = (e) => setHeart(!heart);
 
   return (
     <div className="BeerDetail">

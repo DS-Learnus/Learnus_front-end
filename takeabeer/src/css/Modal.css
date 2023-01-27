@@ -197,4 +197,29 @@ header > p {
   letter-spacing: -0.011em;
   
   white-space: nowrap;
+  text-Decoration: 'none' 
+}
+
+.notUser{
+  padding: 100px;
+  height: 521px;
+}
+
+.notUser > p{
+  top:260px;
+
+  font-weight: 400;
+  font-size: 30px;
+  color: #6F6457;
+  font-family: 'NanumSquare Neo';
+  font-style: normal;
+  white-space: nowrap;
+}
+
+.notUser > .btn {
+  position: absolute;
+
+  top: 400px;
+  left:50%;
+  transform: translate(-50%, 0%);
 }

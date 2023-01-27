@@ -62,7 +62,7 @@ const RecipeDetail = () => {
 
   /* 좋아요 결과 post */
   const postThumbs = async () => {
-    await axios.post(`api/user/likeRecipe`, {
+    await axios.post(`http://localhost:3000/api/user/likeRecipe `, {
       recipeId: `${recipeId}`,
       userId: `${userId}`,
     });

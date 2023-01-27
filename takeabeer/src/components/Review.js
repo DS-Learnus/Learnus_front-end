@@ -54,7 +54,8 @@ const Review = ({reviewId, isBeer}) => {
   /* 맥주 후기 post */
   const postBeerReview = async () => {
     try {
-    await axios.post(`http://localhost:3000/api/beer/review/`, {
+    console.log("Beer Review");
+    await axios.post(`http://localhost:3000/api/beer/review`, {
       "beerId": {reviewId}, 
       "score": {score}, 
       "content": {inputText} 
@@ -69,7 +70,9 @@ const Review = ({reviewId, isBeer}) => {
   /* 레시피 후기 post */
   const postRecipeReview = async () => {
     try{
-    await axios.post(`http://localhost:3000/api/recipe/review/`, {
+      
+    console.log("Recipe Review");
+    await axios.post(`http://localhost:3000/api/recipe/review`, {
       "recipeId": {reviewId}, 
       "score": {score}, 
       "content": {inputText} 
