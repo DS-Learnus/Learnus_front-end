@@ -1,5 +1,16 @@
 #beerlistbody {
-  padding: 2vh;
+  padding: 4vh;
   margin: 0;
-  background-color: #F1EBC6;
+  background-color: #f1ebc6;
+}
+
+.listText {
+  margin-bottom: 50px;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1000px;
 }
