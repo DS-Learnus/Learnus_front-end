@@ -1,0 +1,77 @@
+.authwhiteBox {
+    background: #FFFEF3;
+    width: 833px;
+    border-radius: 20px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.authTitle {
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.subContainer{
+    display: flex;
+    width: 833px;
+    text-align: end;
+}
+.authSubTitle {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.login-link {
+    margin-left: 20px;
+}
+
+.Input {
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    margin-bottom: 3rem;
+    background-color: #FFFEF3;
+}
+
+.formContainer{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formBtn {
+    background: #998A77;
+    border-radius: 9px;
+    color: #FFFEF3;
+    border-style: none;
+    padding: 9px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.degreeTitle {
+    color: #413E3E;
+    font-size: 17px;
+    margin-bottom: 18px;
+    font-weight: 400;
+} 
+
+.Container {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.degreeBtn {
+    border: 1px solid #EB9B3E;
+    border-radius: 9px;
+    color: #EB9B3E;
+    background-color: #FFFEF3;       
+    width: 82px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.active {
+    background-color: #EB9B3E;
+    color: #FFFEF3;
+}
