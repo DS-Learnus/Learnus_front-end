@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 import "../css/Review.css";
 import axios from "../../node_modules/axios/index";
@@ -7,7 +7,9 @@ const Review = ({reviewId, isBeer}) => {
 
   const numList =[1,2,3,4,5];
   const scoreList = numList.map((num,index)=><button onClick={()=>{setScore(num); console.log(score);}} type="button" className="btn btn-secondary" key={index}>{num}</button>)
-  const [score, setScore] = useState(null);
+  const [score, setScore] = useState(null);    
+  const [comments, setComments] = useState([]);
+
   
   const [inputText, setInputText] = useState('');
   const onChangeInput = e => setInputText(e.target.value);
@@ -15,7 +17,43 @@ const Review = ({reviewId, isBeer}) => {
     setInputText('');
   };
 
+  /* 맥주 댓글 정보 get */
+  const getBeerCmt = () => {
+      console.log({reviewId});
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`/api/beer/${reviewId}`);
+          setComments(response.data.beerDetail.review);
+          console.log(response.data); 
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      fetchData();
+  }
 
+  /* 레시피 댓글 정보 get */
+  const getRecipeCmt = () => {
+      console.log({reviewId});
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(`/api/recipe/${reviewId}`);
+          setComments(response.data.recipeDetail.review);
+          console.log(response.data); 
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      fetchData();
+  }
+ 
+
+  /* 댓글 불러오기 */
+  useEffect(() => {
+    {isBeer? getBeerCmt() : getRecipeCmt() }
+  }, [] )
+
+  
   /* 맥주 후기 post */
   const postBeerReview = async () => {
     await axios.post(`api/beer/review`, {
@@ -36,6 +74,16 @@ const Review = ({reviewId, isBeer}) => {
     });
     console.log("Recipe Review post");
   }
+
+  const cmt = () => {
+    console.log(comments);
+    const list = comments.map((comment, index) => {
+      return (
+          <Comment key={index} comment={comment} />
+      );
+    });
+    return <div className="comment-window">{list}</div>;
+  };
 
   return (
     <div className="review">
@@ -60,14 +108,7 @@ const Review = ({reviewId, isBeer}) => {
 
       <div className="review-read">
         <p className="reviewP">코멘트</p>
-        <div className="comment-window">
-          <Comment userName={"서지혜"} userComment={"댓글1입니다"} userStar={1} />
-          <Comment userName={"유수연"} userComment={"댓글2입니다"} userStar={2}/>
-          <Comment userName={"오세은"} userComment={"댓글3입니다"} userStar={3}/>
-          <Comment userName={"박유나"} userComment={"댓글4입니다"} userStar={4}/>
-          <Comment userName={"코코넛"} userComment={"댓글5입니다"} userStar={5}/>
-          <Comment userName={"코너톤"} userComment={"댓글6입니다"} userStar={1}/>
-        </div>
+          {cmt()}
       </div>
 
       <nav aria-label="Page navigation example">

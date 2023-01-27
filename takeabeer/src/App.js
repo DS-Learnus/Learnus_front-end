@@ -14,14 +14,6 @@ import MyPageRecipe from './pages/MyPageRecipe';
 
 function App() {
   return (
-    /*
-    <RecipeDetail recipeId={"63d17e71cc0df63ec9ed6696"} userId="63cd87f1205b64d3463ebcb6"></RecipeDetail>
-    */
-
-    <BeerDetail beerId={"63ccb786560d43ce3e821087"} userId="63cd87f1205b64d3463ebcb6"></BeerDetail>
-
-    );
-/*
     <>
       <Router>
         <Routes>
@@ -29,8 +21,8 @@ function App() {
           <Route path="/beerList" element={<BeerList />} />
           <Route path="/recipeList" element={<RecipeList />} />
           <Route path="/addRecipe" element={<AddRecipe />} />
-          <Route path="/beerDetail" element={<BeerDetail />} />
-          <Route path="/recipeDetail" element={<RecipeDetail />} />
+          <Route path="/beerDetail" element={<BeerDetail beerId="63d3531c21b56c97a5cbde24" userId="63d3544d21b56c97a5cbde4a"/>} />
+          <Route path="/recipeDetail" element={<RecipeDetail recipeId={"63d35b162ce2921dd60fbe1e"} userId="63d3544d21b56c97a5cbde4a"/>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/mypageBeer" element={<MyPageBeer />} />
@@ -39,7 +31,6 @@ function App() {
       </Router>
     </>
   );
-*/
 }
 
 export default App;

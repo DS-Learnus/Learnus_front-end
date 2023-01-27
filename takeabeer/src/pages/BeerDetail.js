@@ -61,7 +61,7 @@ const BeerDetail = ({beerId, userId}) => {
               "userId":`${userId}`
           })
       }
-
+  
     return (
         <div className="BeerDetail">
             <div className="BeerDetail-Info">
