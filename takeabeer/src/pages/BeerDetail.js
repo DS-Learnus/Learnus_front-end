@@ -6,29 +6,20 @@ import "../css/Review.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons"; // ♡
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons"; // ♥︎
-import { faL } from "../../node_modules/@fortawesome/free-solid-svg-icons/index";
 
 const BeerDetail = ({beerId, userId}) => {
 
     const [name, setName] = useState([]);
     const [star, setStar] = useState([]);
-    const [alcohol, setAlcohol] = useState([]);
+    const [level, setLevel] = useState([]);
     const [ingre, setIngre] = useState([]);
     const [intro, setIntro] = useState([]);
-    const [likeId, setLikeId] = useState([]);
+    const [likeId, setLikeId] = useState([]);   
 
-    
     const [heart, setHeart] = useState(false);
     const handleLike = e => setHeart(!heart);
 
-    const postHeart = async () => {
-        await axios.post(`api/user/likeBeer`, {
-            "beerId": `${beerId}`,
-            "userId":`${userId}`
-        })
-    }
-       
-
+    /* 맥주 정보 get */
     useEffect(() => {
         console.log({beerId});
         const fetchData = async () => {
@@ -36,7 +27,7 @@ const BeerDetail = ({beerId, userId}) => {
             const response = await axios.get(`/api/beer/${beerId}`);
             setName(response.data.beerDetail.name); 
             setStar(response.data.likes); 
-            setAlcohol(response.data.beerDetail.abv); 
+            setLevel(response.data.beerDetail.abv); 
             setIngre(response.data.beerDetail.ingredient); 
             setIntro(response.data.beerDetail.intro); 
             console.log(response.data); 
@@ -47,6 +38,7 @@ const BeerDetail = ({beerId, userId}) => {
         fetchData();
       }, []);
 
+      /* 좋아요 여부 get */
       useEffect(() => {
         console.log({userId});
         const fetchData = async () => {
@@ -62,6 +54,14 @@ const BeerDetail = ({beerId, userId}) => {
 
       }, []);
 
+      /* 좋아요 결과 post */
+      const postHeart = async () => {
+          await axios.post(`api/user/likeBeer`, {
+              "beerId": `${beerId}`,
+              "userId":`${userId}`
+          })
+      }
+
     return (
         <div className="BeerDetail">
             <div className="BeerDetail-Info">
@@ -76,7 +76,7 @@ const BeerDetail = ({beerId, userId}) => {
                     </div>
                     <div className="BeerDetail-line">
                         <p>도수</p>
-                        <p>{alcohol}</p>
+                        <p>{level}</p>
                     </div>
                     <div className="BeerDetail-line">
                         <p>원재료</p>
@@ -92,11 +92,7 @@ const BeerDetail = ({beerId, userId}) => {
                 </div>
             </div>
 
-            
-
-        
-
-            <Review />
+            <Review reviewId={beerId} isBeer={true}/>
         </div>
   );
 };

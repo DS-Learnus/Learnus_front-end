@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AuthForm from "../../components/auth/AuthForm";
 import { changeField, initializeForm } from "../../modules/auth";
+import { register } from '../../lib/api/auth';
 
 const RegisterForm = () => {
     const dispatch = useDispatch();
@@ -20,7 +21,7 @@ const RegisterForm = () => {
     };
 
     const onClick = e => {
-        const { value, name } = e.target;
+        const { value, name } = e.target.value;
         dispatch(
             changeField({
                 form: 'register',
@@ -30,10 +31,15 @@ const RegisterForm = () => {
         );
     }
 
+
     // 폼 등록 이벤트 핸들러
-    const onSubmit = e => {
+    const onSubmit = (e) => {
         e.preventDefault();
-        //구현 예정
+
+        e.preventDefault();
+        
+        const { username, password, passwordConfirm } = form;
+        dispatch(register({username, password, passwordConfirm}));
     };   
 
 

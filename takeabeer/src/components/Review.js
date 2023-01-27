@@ -3,11 +3,11 @@ import Comment from "./Comment";
 import "../css/Review.css";
 import axios from "../../node_modules/axios/index";
 
-const Review = () => {
+const Review = ({reviewId, isBeer}) => {
 
   const numList =[1,2,3,4,5];
-  const starList = numList.map((num,index)=><button onClick={()=>{setStar(num); console.log(star);}} type="button" className="btn btn-secondary" key={index}>{num}</button>)
-  const [star, setStar] = useState(null);
+  const scoreList = numList.map((num,index)=><button onClick={()=>{setScore(num); console.log(score);}} type="button" className="btn btn-secondary" key={index}>{num}</button>)
+  const [score, setScore] = useState(null);
   
   const [inputText, setInputText] = useState('');
   const onChangeInput = e => setInputText(e.target.value);
@@ -16,16 +16,26 @@ const Review = () => {
   };
 
 
-
-  const postReview = async () => {
+  /* 맥주 후기 post */
+  const postBeerReview = async () => {
     await axios.post(`api/beer/review`, {
-      "beerId": "63ccb786560d43ce3e821087", 
-      "score": {star}, 
+      "beerId": {reviewId}, 
+      "score": {score}, 
       "content": {inputText} 
     });
-    console.log("ThumbsUp post");
+    console.log("Beer Review post");
   }
-   
+
+
+  /* 레시피 후기 post */
+  const postRecipeReview = async () => {
+    await axios.post(`api/recipe/review`, {
+      "recipeId": {reviewId}, 
+      "score": {score}, 
+      "content": {inputText} 
+    });
+    console.log("Recipe Review post");
+  }
 
   return (
     <div className="review">
@@ -39,11 +49,11 @@ const Review = () => {
           aria-label="Toolbar with button groups"
         >
           <div class="btn-group mr-2" role="group" aria-label="First group">
-            {starList}
+            {scoreList}
           </div>
         </div>
 
-        <button type="button" class="write-btn btn btn-warning" onClick={onClickBtn}>
+        <button type="button" class="write-btn btn btn-warning" onClick={()=>{onClickBtn(); {isBeer? postBeerReview():postRecipeReview()};}}>
           코멘트 작성
         </button>
       </div>
