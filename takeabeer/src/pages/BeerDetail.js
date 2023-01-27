@@ -7,10 +7,57 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons'; // ♡
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons'; // ♥︎
 
-const BeerDetail = () => {
-  const [heart, setHeart] = useState(false);
+const BeerDetail = ({ beerId, userId }) => {
+  const [name, setName] = useState([]);
+  const [star, setStar] = useState([]);
+  const [level, setLevel] = useState([]);
+  const [ingre, setIngre] = useState([]);
+  const [intro, setIntro] = useState([]);
+  const [image, setImage] = useState([]);
+  const [likeId, setLikeId] = useState([]);
 
+  const [heart, setHeart] = useState(false);
   const handleLike = (e) => setHeart(!heart);
+
+  /* 맥주 정보 get */
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`/api/beer/${beerId}`);
+        setName(response.data.beerDetail.name);
+        setStar(response.data.likes);
+        setLevel(response.data.beerDetail.abv);
+        setIngre(response.data.beerDetail.ingredient);
+        setIntro(response.data.beerDetail.intro);
+        setImage(response.data.beerDetail.image);
+        console.log(response.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
+
+  /* 좋아요 여부 get */
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`api/user/mypage/${userId}`);
+        setLikeId(response.data.mylikeBeer);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchData();
+  }, []);
+
+  /* 좋아요 결과 post */
+  const postHeart = async () => {
+    await axios.post(`api/user/likeBeer`, {
+      beerId: `${beerId}`,
+      userId: `${userId}`,
+    });
+  };
 
   return (
     <div className="BeerDetail">
@@ -18,37 +65,39 @@ const BeerDetail = () => {
         <div className="heart-icon">
           <FontAwesomeIcon
             icon={heart ? solidHeart : regularHeart}
-            onClick={handleLike}
+            onClick={() => {
+              handleLike();
+              postHeart();
+            }}
             size="4x"
             color="#F24E1E"
           />
         </div>
-        <p>제품명</p>
+        <p>{name}</p>
         <div className="BeerDetail-lines">
           <div className="BeerDetail-line">
             <p>평균 별점</p>
-            <p>4</p>
+            <p>{star}</p>
           </div>
           <div className="BeerDetail-line">
             <p>도수</p>
-            <p>5.2</p>
+            <p>{level}</p>
           </div>
           <div className="BeerDetail-line">
             <p>원재료</p>
-            <p>원재료, 원재료, 원재료</p>
+            <p>{ingre}</p>
           </div>
           <div className="BeerDetail-line">
             <p>특징</p>
-            <p>맥주설명 맥주설명 맥주설명 맥주설명 맥주설명 </p>
+            <p>{intro}</p>
           </div>
-          <div className="BeerDetail-line"></div>
         </div>
         <div className="BeerDetail-image">
-          <img alt="terra" src={require('../img/terra.jpg')} />
+          <img alt="terra" src={image} />
         </div>
       </div>
 
-      <Review />
+      <Review reviewId={beerId} isBeer={true} />
     </div>
   );
 };

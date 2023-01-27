@@ -12,23 +12,22 @@ import MyPageRecipe from './pages/MyPageRecipe';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
-
 function App() {
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/beerList" element={<BeerList />} />
-          <Route path="/recipeList" element={<RecipeList />} />
-          <Route path="/addRecipe" element={<AddRecipe />} />
-          <Route path="/beerDetail" element={<BeerDetail />} />
-          <Route path="/recipeDetail" element={<RecipeDetail />} />
-          <Route path="/mypageBeer" element={<MyPageBeer />} />
-          <Route path="/mypageRecipe" element={<MyPageRecipe />}/>
-          <Route path="/login" element={<Login />}/>
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/beerList" element={<BeerList />} />
+        <Route path="/recipeList" element={<RecipeList />} />
+        <Route path="/addRecipe" element={<AddRecipe />} />
+        <Route path="/beerDetail" element={<BeerDetail />} />
+        <Route path="/recipeDetail" element={<RecipeDetail />} />
+        <Route path="/mypageBeer" element={<MyPageBeer />} />
+        <Route path="/mypageRecipe" element={<MyPageRecipe />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
   );
 }
 

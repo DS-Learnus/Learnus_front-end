@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../node_modules/axios/index";
 import "../css/Review.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as solidThumbs } from "@fortawesome/free-solid-svg-icons"; // ♥︎
 import { faStar } from "@fortawesome/free-solid-svg-icons"; // ♥︎
 
-const Comment = ({ userName, userComment, userStar}) => {
+const Comment = ({ comment }) => {
+
+  const [userComment, setUserComment] = useState(comment.content);
+  const [userScore, setUserScore] = useState(comment.score);
+  const [userName, setUserName] = useState(comment.userId.nikname);  
+
   return (
     <div className="c">
       <span className="userImg">
@@ -14,7 +20,7 @@ const Comment = ({ userName, userComment, userStar}) => {
         <p className="comment-userName">{userName}</p>
         <p>{userComment}</p>
         <div className="userStarBox">
-          <p>{userStar}</p>
+          <p>{userScore}</p>
           <div className="starIcon">
             <FontAwesomeIcon icon={faStar} color="#7B7B7B" />
           </div>
