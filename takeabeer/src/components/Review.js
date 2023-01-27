@@ -20,12 +20,10 @@ const Review = ({reviewId, isBeer}) => {
 
   /* 맥주 댓글 정보 get */
   const getBeerCmt = () => {
-      console.log({reviewId});
       const fetchData = async () => {
         try {
           const response = await axios.get(`/api/beer/${reviewId}`);
           setComments(response.data.beerDetail.review);
-          console.log(response.data); 
         } catch (e) {
           console.log(e);
         }
@@ -35,12 +33,10 @@ const Review = ({reviewId, isBeer}) => {
 
   /* 레시피 댓글 정보 get */
   const getRecipeCmt = () => {
-      console.log({reviewId});
       const fetchData = async () => {
         try {
           const response = await axios.get(`/api/recipe/${reviewId}`);
           setComments(response.data.recipeDetail.review);
-          console.log(response.data); 
         } catch (e) {
           console.log(e);
         }

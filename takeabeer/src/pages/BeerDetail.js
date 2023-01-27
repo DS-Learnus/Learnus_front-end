@@ -14,6 +14,7 @@ const BeerDetail = ({beerId, userId}) => {
     const [level, setLevel] = useState([]);
     const [ingre, setIngre] = useState([]);
     const [intro, setIntro] = useState([]);
+    const [image, setImage] = useState([]);
     const [likeId, setLikeId] = useState([]);   
 
     const [heart, setHeart] = useState(false);
@@ -21,7 +22,6 @@ const BeerDetail = ({beerId, userId}) => {
 
     /* 맥주 정보 get */
     useEffect(() => {
-        console.log({beerId});
         const fetchData = async () => {
           try {
             const response = await axios.get(`/api/beer/${beerId}`);
@@ -30,6 +30,7 @@ const BeerDetail = ({beerId, userId}) => {
             setLevel(response.data.beerDetail.abv); 
             setIngre(response.data.beerDetail.ingredient); 
             setIntro(response.data.beerDetail.intro); 
+            setImage(response.data.beerDetail.image);
             console.log(response.data); 
           } catch (e) {
             console.log(e);
@@ -40,12 +41,10 @@ const BeerDetail = ({beerId, userId}) => {
 
       /* 좋아요 여부 get */
       useEffect(() => {
-        console.log({userId});
         const fetchData = async () => {
           try {
             const response = await axios.get(`api/user/mypage/${userId}`);
-            setLikeId(response.data.mylikeBeer.beerId); 
-            console.log(response.data); 
+            setLikeId(response.data.mylikeBeer); 
           } catch (e) {
             console.log(e);
           }
@@ -88,7 +87,7 @@ const BeerDetail = ({beerId, userId}) => {
                     </div>
                 </div>
                 <div className="BeerDetail-image">
-                <img alt="terra" src={require("../img/terra.jpg")} />
+                <img alt="terra" src={image} />
                 </div>
             </div>
 

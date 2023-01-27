@@ -13,7 +13,8 @@ const RecipeDetail = ({ recipeId, userId }) => {
   const [userName, setUserName] = useState([]);
   const [createdAt, setCreatedAt] = useState([]);
   const [ingList, setIngList] = useState([]);
-  const [content, setContent] = useState([]);
+  const [content, setContent] = useState([]);    
+  const [image, setImage] = useState([]);
 
   const [thumbs, setThumbs] = useState(false);
   const handleLike = e => setThumbs(!thumbs);
@@ -29,6 +30,7 @@ const RecipeDetail = ({ recipeId, userId }) => {
         setCreatedAt(response.data.recipeDetail.createdAt); 
         setIngList(response.data.recipeDetail.ingredient); 
         setContent(response.data.recipeDetail.content); 
+        setImage(response.data.recipeDetail.image);
         console.log(response.data); 
       } catch (e) {
         console.log(e);

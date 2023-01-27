@@ -13,7 +13,8 @@ const Modal = ({ open, close, userId }) => {
   const [beerName, setBeerName] = useState([]);
   const [beerLevel, setBeerLevel] = useState([]);
   const [recipeName, setRecipeName] = useState([]);
-  const [recipeStar, setRecipeStar] = useState([]);
+  const [beerImage, setBImage] = useState([]);
+  const [recipeImage, setRImage] = useState([]);
 
   useEffect(() => {
     console.log({userId});
@@ -22,7 +23,8 @@ const Modal = ({ open, close, userId }) => {
         const response = await axios.get(`/api/beer/recommend/${userId}`);
         setBeerName(response.data.result.name); 
         setBeerLevel(response.data.result.abv); 
-        setRecipeName(response.data.resultRecipe.name);
+        /*setRecipeName(response.data.resultRecipe.name);*/  
+        setBImage(response.data.result.image);
         console.log(response.data); 
       } catch (e) {
         console.log(e);
@@ -54,7 +56,7 @@ const Modal = ({ open, close, userId }) => {
                     <div className='Rec'>
                         <Link  to={`/beerDetail`} className='gotoDetail'>{beerName}</Link>
                         <p>{beerLevel}</p>
-                        <img alt="terra" src={require("../img/terra.jpg")} />
+                        <img alt="추천 맥주 이미지" src={beerImage} />
                         <div className='Modal-heart-icon'>
                             <FontAwesomeIcon  icon={heart ? solidHeart : regularHeart} onClick={handleHeart} size="2x" color='#F24E1E'/>
                         </div>
@@ -62,7 +64,7 @@ const Modal = ({ open, close, userId }) => {
                     <div className='Rec'>
                         <Link  to={`/recipeDetail`} className='gotoDetail'>{recipeName}</Link>
                         <p>평점 정보</p>
-                        <img alt="terra" src={require("../img/recipe.jpg")} />
+                        <img alt="추천 레시피 이미지" src={recipeImage} />
                         <div className='Modal-thumbs_icon'>
                             <FontAwesomeIcon icon={thumbs ? solidThumbs : regularThumbs} onClick={handleThumbs} size="2x"  color='#A69C9C'/>
                         </div>
