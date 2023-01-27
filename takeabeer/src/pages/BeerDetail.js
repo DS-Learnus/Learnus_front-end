@@ -43,7 +43,7 @@ const BeerDetail = ({beerId, userId}) => {
       useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get(`api/user/mypage/${userId}`);
+            const response = await axios.get(``);
             setLikeId(response.data.mylikeBeer); 
           } catch (e) {
             console.log(e);
@@ -63,35 +63,39 @@ const BeerDetail = ({beerId, userId}) => {
   
     return (
         <div className="BeerDetail">
+          <div className="BeerDetail-container">
             <div className="BeerDetail-Info">
-                <div className='heart-icon'>
-                    <FontAwesomeIcon  icon={heart ? solidHeart : regularHeart} onClick={()=>{handleLike(); postHeart();}} size="4x" color='#F24E1E'/>
-                </div>
-                <p>{name}</p>
-                <div className="BeerDetail-lines">
-                    <div className="BeerDetail-line">
-                        <p>평균 별점</p>
-                        <p>{star}</p>
-                    </div>
-                    <div className="BeerDetail-line">
-                        <p>도수</p>
-                        <p>{level}</p>
-                    </div>
-                    <div className="BeerDetail-line">
-                        <p>원재료</p>
-                        <p>{ingre}</p>
-                    </div>
-                    <div className="BeerDetail-line">
-                        <p>특징</p>
-                        <p>{intro}</p>
-                    </div>
-                </div>
-                <div className="BeerDetail-image">
-                <img alt="terra" src={image} />
-                </div>
-            </div>
-
-            <Review reviewId={beerId} isBeer={true}/>
+                  <div className='heart-icon'>
+                      <FontAwesomeIcon  icon={heart ? solidHeart : regularHeart} onClick={()=>{handleLike(); postHeart();}} size="4x" color='#F24E1E'/>
+                  </div>
+                  <p>{name}</p>
+                  <div className="BeerDetail-lines">
+                      <div className="BeerDetail-line">
+                          <p>평균 별점</p>
+                          <p>{star}</p>
+                      </div>
+                      <div className="BeerDetail-line">
+                          <p>도수</p>
+                          <p>{level}</p>
+                      </div>
+                      <div className="BeerDetail-line">
+                          <p>원재료</p>
+                          <p>{ingre}</p>
+                      </div>
+                      <div className="BeerDetail-line">
+                          <p>특징</p>
+                          <p>{intro}</p>
+                      </div>
+                  </div>
+                  <div className="BeerDetail-image">
+                  <img alt="terra" src={image} />
+                  </div>
+              </div>
+              
+              <div>
+                <Review reviewId={beerId} isBeer={true}/>
+              </div>
+          </div>
         </div>
   );
 };

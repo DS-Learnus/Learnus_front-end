@@ -1,24 +1,27 @@
 .review {
   position: absolute;
   width: 850px;
-  height: 1422px;
-  bottom: 252px;
+  height: auto;
 
   background: #fffef3;
   border-radius: 12px;
 
+  display: flex;
+  flex-direction: column;
   
+  top: 850px;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
 .reviewP {
   /* 후기 남기기, 코멘트 */
-  position: absolute;
+  position: relative;
   width: 149px;
   height: 39px;
   left: 15px;
-  top: 15px;
+  top: 0px;
+  clear:both;
 
   font-family: "NanumSquareNeoRegular";
   font-style: normal;
@@ -35,11 +38,11 @@
 /* ~~~~~후기 작성칸~~~~~ */
 
 .review-write {
-  position: absolute;
+  float:center;
   width: 800px;
   height: 373px;
   left: 25px;
-  top: 13px;
+  margin:30px;
 }
 
 /* 코멘트 작성창 */
@@ -48,8 +51,8 @@
   position: absolute;
   width: 800px;
   height: 295px;
-  left: 0px;
-  bottom: 1px;
+  clear:both;
+  top:90px;
 
   background: #b3c38f;
   border-radius: 10px;
@@ -59,12 +62,14 @@
   position: absolute;
   width: 750px;
   height: 206px;
+  top:90px;
   left: 24px;
-  bottom: 67px;
+  clear:both;
 
   background: #d4debd;
   border-radius: 10px;
   border: none;
+  margin:30px;
 }
 
 textarea:focus {
@@ -76,11 +81,12 @@ input:focus {
 }
 
 .write-btn {
-  position: absolute;
+  clear: both;
+  position: relative;
   width: 107px;
   height: 33px;
-  right: 25px;
-  bottom: 16px;
+  right: -670px;
+  top: 250px;
 
   background: #f3ebbf;
   border-color: #F3EBBF;
@@ -99,27 +105,25 @@ input:focus {
 }
 
 .star-frame {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 1px;
+  padding: 10px;
+  clear:both;
 
-  position: relative;
+  position: absolute;
   width: 224px;
   height: 44px;
-  left: 620px;
+  left: 600px;
   top: 19px;
 }
+
 
 /* ~~~~~코멘트 확인창~~~~~ */
 
 .review-read {
-  position: absolute;
+  float:center;
   width: 800px;
-  height: 989px;
-  left: 25px;
-  top: 418px;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
   background: radial-gradient(
     50% 50% at 50% 50%,
     #d4debd 0%,
@@ -129,29 +133,31 @@ input:focus {
 
 .comment-window {
   box-sizing: border-box;
-  position: absolute;
+  float:center;
   width: 800px;
-  height: 853px;
-  left: 0px;
-  top: 74px;
+  height: auto;
+  overflow: hidden;
 
   border: 2px solid #94a66d;
   border-radius: 10px;
 }
 
+
 .comment {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  padding: 30px;
   gap: 15px;
 
   position: absolute;
   width: 700px;
-  height: 783px;
-  left: 50px;
-  top: 30px;
+  height: auto;
+  overflow: hidden;
 }
+
+
+
 
 .c {
   width: 700px;
@@ -161,7 +167,6 @@ input:focus {
   flex-grow: 0;
   flex-basis: auto;
   left: 30px;
-  top: 0px;
   margin: 18px;
 }
 
@@ -278,15 +283,12 @@ input:focus {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  padding: 5px;
   gap: 3px;
 
   position: relative;
   width: 169px;
   height: 40px;
   left: 350px;
-  bottom: -1365px;
-}
-
-.center{
+  bottom: 0px;
 }
