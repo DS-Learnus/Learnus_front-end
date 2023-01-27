@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Comment from "./Comment";
 import "../css/Review.css";
+import axios from "../../node_modules/axios/index";
 
 const Review = () => {
 
@@ -13,6 +14,18 @@ const Review = () => {
   const onClickBtn = () => {
     setInputText('');
   };
+
+
+
+  const postReview = async () => {
+    await axios.post(`api/beer/review`, {
+      "beerId": "63ccb786560d43ce3e821087", 
+      "score": {star}, 
+      "content": {inputText} 
+    });
+    console.log("ThumbsUp post");
+  }
+   
 
   return (
     <div className="review">

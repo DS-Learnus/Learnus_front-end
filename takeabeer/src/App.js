@@ -13,7 +13,7 @@ import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
-    <RecipeDetail recipeId={"63ced5abe15a3a11e40907b4"}></RecipeDetail>
+    <RecipeDetail recipeId={"63d17e71cc0df63ec9ed6696"} userId="63cd87f1205b64d3463ebcb6"></RecipeDetail>
     );
 }
 

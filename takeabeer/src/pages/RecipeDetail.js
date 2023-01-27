@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp as regularThumbs } from "@fortawesome/free-regular-svg-icons"; // ♡
 import { faThumbsUp as solidThumbs } from "@fortawesome/free-solid-svg-icons"; // ♥︎
 
-const RecipeDetail = ({ recipeId }) => {
+const RecipeDetail = ({ recipeId, userId }) => {
 
   const [name, setName] = useState([]);
   const [userName, setUserName] = useState([]);
@@ -18,6 +18,15 @@ const RecipeDetail = ({ recipeId }) => {
 
   const [thumbs, setThumbs] = useState(false);
   const handleLike = e => setThumbs(!thumbs);
+
+  const postThumbs = async () => {
+    await axios.post(`api/user/likeRecipe`, {
+      "recipeId": `${recipeId}`,
+      "userId": `${userId}`
+    });
+    console.log("ThumbsUp post");
+  }
+   
 
   useEffect(() => {
     console.log({recipeId});
@@ -50,7 +59,7 @@ const RecipeDetail = ({ recipeId }) => {
           <img alt="user" src={require("../img/userImg.png")} />
         </div>
         <div className='thumbs_icon'>
-            <FontAwesomeIcon icon={thumbs ? solidThumbs : regularThumbs} onClick={handleLike} size="3x"  color={thumbs ? "#EB9B3E":'#A69C9C'}/>
+            <FontAwesomeIcon icon={thumbs ? solidThumbs : regularThumbs} onClick={()=>{handleLike(); postThumbs();}} size="3x"  color={thumbs ? "#EB9B3E":'#A69C9C'}/>
         </div>
 
       </div>
