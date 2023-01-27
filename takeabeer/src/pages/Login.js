@@ -40,7 +40,7 @@ function Login() {
             console.log(userID);
 
             if(response.payload.loginSuccess){
-                navigate("/mypageBeer");
+                navigate("/");
             } else {
                 alert('Error')
             }
