@@ -7,17 +7,16 @@
 
 /* 맥주 정보 */
 .BeerDetail-container{
-  display: flex;
-  flex-direction: column;
+  
 }
 
 
 .BeerDetail-Info {
-  position: absolute;
+  position: relative;
+  float: center;
   width: 1520px;
   height: 329px;
-  top: 434px;
-  clear:both;
+  top: 334px;
   
   left: 50%;
   transform: translate(-50%, 0%);

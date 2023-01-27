@@ -55,7 +55,7 @@ const RecipeDetail = ({ recipeId, userId }) => {
   const ingredient = ingList.map((ing, index) => <div className="RecipeDetail-ingredientLine" key={index}><p>{ing.name}</p><p>{ing.amount}{ing.unit}</p></div>);
 
   return (
-    <div className="RecipeDetail">
+    <div className="RecipeDetail" >
       <div className="RecipeDetail-title">
         <p>{name}</p>
         <p>좋아요</p>
