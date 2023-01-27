@@ -41,7 +41,9 @@ const AddRecipe = () => {
             <td>
 
               <AppendItem />
-              <FaPlusCircle />
+
+
+              
             </td>
           </tr>
 
@@ -53,7 +55,7 @@ const AddRecipe = () => {
           </tr>
         </tbody>
       </table>
-
+      <button className="saveBtn">SAVE</button>
     </div>
   );
 };
