@@ -29,12 +29,12 @@
 
 ## Table of contents
 - [열심히 배우는 사람들, LearnUs!](#열심히-배우는-사람들-learnus)
+- [Preview](#preview)
 - [Features](#features)
 - [Tech stack](#tech-stack)
 - [Installation](#installation)
 	- [Setup](#setup)
 	- [Client](#client)
-	- [Node.js server](#nodejs-server)
 
 ## 열심히 배우는 사람들, LearnUs!
 
@@ -45,6 +45,9 @@
 | 유수연(팀장) | 박유나(팀원)  | 서지혜(팀원) | 오세은(팀원) |
 | [@otcroz](https://github.com/otcroz) | [@pyounani](https://github.com/pyounani)  | [@Jihye0623](https://github.com/jihye0623) | [@ose0221](https://github.com/ose0221) |
 |Client, Server|Client|Client|Client|
+
+## Preview
+![GIFMaker_me (1)](https://github.com/DS-Learnus/.github/assets/79989242/ce86ae45-eacd-4f74-868b-6593cb26d39b)
 
 
 ## Features
